@@ -1,0 +1,8 @@
+{
+	"mod.uber.name": "Uber",
+	"itemGroup.uber.item_group": "Uber",
+
+	"item.uber.mana_bucket": "Mana Bucket",
+	"block.uber.dreadstone": "Dreadstone",
+	"block.uber.crownstone": "Crownstone"
+}
