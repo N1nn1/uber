@@ -23,6 +23,9 @@
     ],
     "client": [
       "com.ninni.uber.UberClient"
+    ],
+    "fabric-datagen": [
+      "com.ninni.uber.data.UberDataGenerator"
     ]
   },
   "mixins": [
