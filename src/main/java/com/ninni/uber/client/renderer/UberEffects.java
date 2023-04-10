@@ -10,7 +10,7 @@ import net.minecraft.world.phys.Vec3;
 public class UberEffects extends DimensionSpecialEffects {
 
     public UberEffects() {
-        super(Float.NaN, true, UberSkyTypes.UBER.get(), false, true);
+        super(85, true, UberSkyTypes.UBER.get(), false, true);
     }
 
     @Override
