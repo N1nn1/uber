@@ -10,7 +10,6 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -47,6 +46,8 @@ public class ManaFluid extends FlowingFluid {
     public void animateTick(Level level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
     }
 
+
+
     @Override
     protected boolean canConvertToSource(Level level) {
         return false;
@@ -62,7 +63,7 @@ public class ManaFluid extends FlowingFluid {
     }
 
     public int getSlopeFindDistance(LevelReader levelReader) {
-        return 4;
+        return 3;
     }
 
     public BlockState createLegacyBlock(FluidState fluidState) {

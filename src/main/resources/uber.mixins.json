@@ -4,9 +4,12 @@
   "package": "com.ninni.uber.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "FogTypeMixin"
   ],
   "client": [
+    "client.CameraMixin",
     "client.DimensionSpecialEffectsMixin",
+    "client.FogRendererMixin",
     "client.LevelRendererMixin",
     "client.SkyTypeMixin"
   ],

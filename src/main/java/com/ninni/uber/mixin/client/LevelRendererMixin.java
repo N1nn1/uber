@@ -16,6 +16,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,8 +26,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LevelRenderer.class)
-public class LevelRendererMixin {
+public abstract class LevelRendererMixin {
     @Shadow @Final private Minecraft minecraft;
+    @Shadow private @Nullable ClientLevel level;
     private static final ResourceLocation MINDS_EYE = new ResourceLocation(Uber.MOD_ID, "textures/environment/minds_eye.png");
     private static final ResourceLocation UBER_SKY_LOCATION = new ResourceLocation(Uber.MOD_ID, "textures/environment/uber_sky.png");
 
@@ -41,10 +43,12 @@ public class LevelRendererMixin {
     }
 
     private void renderMindsEye(PoseStack poseStack, BufferBuilder bufferBuilder) {
-        float l = 30.0f;
+        float l = 25.0f;
         poseStack.pushPose();
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0F);
-        poseStack.mulPose(Axis.XP.rotationDegrees(-45.0F));
+        poseStack.mulPose(Axis.XP.rotationDegrees(-60.0F));
+        assert this.level != null;
+        poseStack.mulPose(Axis.YP.rotationDegrees((float)this.level.getGameTime()/8));
         Matrix4f matrix4f3 = poseStack.last().pose();
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderTexture(0, MINDS_EYE);
@@ -68,21 +72,13 @@ public class LevelRendererMixin {
         BufferBuilder bufferBuilder = tesselator.getBuilder();
         for (int i = 0; i < 6; ++i) {
             poseStack.pushPose();
-            if (i == 1) {
-                poseStack.mulPose(Axis.XP.rotationDegrees(90.0f));
-            }
-            if (i == 2) {
-                poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f));
-            }
-            if (i == 3) {
-                poseStack.mulPose(Axis.XP.rotationDegrees(180.0f));
-            }
-            if (i == 4) {
-                poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
-            }
-            if (i == 5) {
-                poseStack.mulPose(Axis.ZP.rotationDegrees(-90.0f));
-            }
+
+            if (i == 1) poseStack.mulPose(Axis.XP.rotationDegrees(90.0f));
+            if (i == 2) poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f));
+            if (i == 3) poseStack.mulPose(Axis.XP.rotationDegrees(180.0f));
+            if (i == 4) poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
+            if (i == 5) poseStack.mulPose(Axis.ZP.rotationDegrees(-90.0f));
+
             Matrix4f matrix4f = poseStack.last().pose();
             bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
             bufferBuilder.vertex(matrix4f, -100.0f, -100.0f, -100.0f).uv(0.0f, 0.0f).color(40, 40, 40, 255).endVertex();

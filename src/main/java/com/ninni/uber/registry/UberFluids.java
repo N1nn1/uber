@@ -15,6 +15,6 @@ public class UberFluids {
     public static final FlowingFluid MANA = register("mana", new ManaFluid.Source());
 
     private static <T extends Fluid> T register(String string, T fluid) {
-        return Registry.register(BuiltInRegistries.FLUID, new ResourceLocation(MOD_ID + string), fluid);
+        return Registry.register(BuiltInRegistries.FLUID, new ResourceLocation(MOD_ID, string), fluid);
     }
 }

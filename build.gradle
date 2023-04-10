@@ -21,6 +21,7 @@ loom {
 			runDir "build/datagen"
 		}
 	}
+	accessWidenerPath = file("src/main/resources/uber.accesswidener")
 }
 
 sourceSets {
