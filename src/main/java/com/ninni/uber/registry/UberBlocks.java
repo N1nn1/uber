@@ -14,6 +14,7 @@ public class UberBlocks {
 
     public static final Block DREADSTONE = register("dreadstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MIDNIGHT_SOIL = register("midnight_soil", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 
     public static final Block MANA = register("mana", new LiquidBlock(UberFluids.MANA, FabricBlockSettings.of(Material.WATER).noCollission().strength(100.0F).lightLevel(blockState -> 15).noLootTable()));
 

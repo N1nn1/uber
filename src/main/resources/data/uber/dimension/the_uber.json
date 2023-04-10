@@ -7,7 +7,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "minecraft:deep_cold_ocean",
+          "biome": "uber:luminous_wasteland",
           "parameters": {
             "temperature": 0,
             "humidity": 0,

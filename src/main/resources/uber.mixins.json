@@ -6,6 +6,9 @@
   "mixins": [
   ],
   "client": [
+    "client.DimensionSpecialEffectsMixin",
+    "client.LevelRendererMixin",
+    "client.SkyTypeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
