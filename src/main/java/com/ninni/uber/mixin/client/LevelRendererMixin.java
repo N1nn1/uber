@@ -28,12 +28,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LevelRendererMixin {
     @Shadow @Final private Minecraft minecraft;
     private static final ResourceLocation MINDS_EYE = new ResourceLocation(Uber.MOD_ID, "textures/environment/minds_eye.png");
+    private static final ResourceLocation UBER_SKY_LOCATION = new ResourceLocation(Uber.MOD_ID, "textures/environment/uber_sky.png");
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;getFluidInCamera()Lnet/minecraft/world/level/material/FogType;", shift = At.Shift.AFTER), method = "renderSky")
     private void renderSky(PoseStack poseStack, Matrix4f matrix4f, float f, Camera camera, boolean bl, Runnable runnable, CallbackInfo ci) {
         ClientLevel level = this.minecraft.level;
         BufferBuilder bufferBuilder = Tesselator.getInstance().getBuilder();
         if (level != null && level.effects().skyType() == UberSkyTypes.UBER.get()) {
+            this.renderUberSky(poseStack);
             this.renderMindsEye(poseStack, bufferBuilder);
         }
     }
@@ -55,6 +57,43 @@ public class LevelRendererMixin {
         RenderSystem.disableBlend();
         RenderSystem.defaultBlendFunc();
         poseStack.popPose();
+    }
+
+    private void renderUberSky(PoseStack poseStack) {
+        RenderSystem.enableBlend();
+        RenderSystem.depthMask(false);
+        RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
+        RenderSystem.setShaderTexture(0, UBER_SKY_LOCATION);
+        Tesselator tesselator = Tesselator.getInstance();
+        BufferBuilder bufferBuilder = tesselator.getBuilder();
+        for (int i = 0; i < 6; ++i) {
+            poseStack.pushPose();
+            if (i == 1) {
+                poseStack.mulPose(Axis.XP.rotationDegrees(90.0f));
+            }
+            if (i == 2) {
+                poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f));
+            }
+            if (i == 3) {
+                poseStack.mulPose(Axis.XP.rotationDegrees(180.0f));
+            }
+            if (i == 4) {
+                poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
+            }
+            if (i == 5) {
+                poseStack.mulPose(Axis.ZP.rotationDegrees(-90.0f));
+            }
+            Matrix4f matrix4f = poseStack.last().pose();
+            bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
+            bufferBuilder.vertex(matrix4f, -100.0f, -100.0f, -100.0f).uv(0.0f, 0.0f).color(40, 40, 40, 255).endVertex();
+            bufferBuilder.vertex(matrix4f, -100.0f, -100.0f, 100.0f).uv(0.0f, 16.0f).color(40, 40, 40, 255).endVertex();
+            bufferBuilder.vertex(matrix4f, 100.0f, -100.0f, 100.0f).uv(16.0f, 16.0f).color(40, 40, 40, 255).endVertex();
+            bufferBuilder.vertex(matrix4f, 100.0f, -100.0f, -100.0f).uv(16.0f, 0.0f).color(40, 40, 40, 255).endVertex();
+            tesselator.end();
+            poseStack.popPose();
+        }
+        RenderSystem.depthMask(true);
+        RenderSystem.disableBlend();
     }
 
 }
