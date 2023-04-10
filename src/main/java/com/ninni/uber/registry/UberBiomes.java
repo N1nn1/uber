@@ -29,7 +29,26 @@ public class UberBiomes {
         MobSpawnSettings mobSpawnSettings = (new MobSpawnSettings.Builder()).build();
         BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder(holderGetter, holderGetter2));
         BiomeDefaultFeatures.addDefaultMushrooms(builder);
-        return (new Biome.BiomeBuilder()).hasPrecipitation(false).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(0).skyColor(0).ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP).ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_NETHER_WASTES_MOOD, 6000, 8, 2.0)).ambientAdditionsSound(new AmbientAdditionsSettings(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111)).backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES)).build()).mobSpawnSettings(mobSpawnSettings).generationSettings(builder.build()).build();
+
+        return (new Biome.BiomeBuilder())
+                .hasPrecipitation(false)
+                .temperature(2.0F)
+                .downfall(0.0F)
+                .specialEffects(
+                        (new BiomeSpecialEffects.Builder())
+                                .waterColor(4159204)
+                                .waterFogColor(329011)
+                                .fogColor(0)
+                                .skyColor(0)
+                                .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
+                                .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_NETHER_WASTES_MOOD, 6000, 8, 2.0))
+                                .ambientAdditionsSound(new AmbientAdditionsSettings(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111))
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
+                                .build()
+                )
+                .mobSpawnSettings(mobSpawnSettings)
+                .generationSettings(builder.build())
+                .build();
     }
 
     public static void bootstrap(BootstapContext<Biome> biomeRegisterable) {

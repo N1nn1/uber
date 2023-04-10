@@ -1,20 +1,23 @@
 package com.ninni.uber.registry;
 
 import com.ninni.uber.Uber;
+import com.ninni.uber.block.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.Material;
 
 public class UberBlocks {
 
     public static final Block DREADSTONE = register("dreadstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block MIDNIGHT_SOIL = register("midnight_soil", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MEDULESOIL = register("medulesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+    public static final Block PHASMOFUZZ = register("phasmofuzz", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
+    public static final Block PHASMOFOLLICLE = register("phasmofollicle", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS)));
+    public static final Block ISTALKS = register("istalks", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS)));
+    public static final Block TALL_ISTALKS = register("tall_istalks", new UberTallVegetationBlock(FabricBlockSettings.copyOf(Blocks.PEONY)));
 
     public static final Block MANA = register("mana", new LiquidBlock(UberFluids.MANA, FabricBlockSettings.of(Material.WATER).noCollission().strength(100.0F).lightLevel(blockState -> 15).noLootTable()));
 

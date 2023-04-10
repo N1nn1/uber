@@ -145,6 +145,28 @@
             }
           }
         }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:vertical_gradient",
+          "random_name": "uber:dreadstone",
+          "true_at_and_below": {
+            "absolute": 100
+          },
+          "false_at_and_above": {
+            "absolute": 106
+          }
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:stone",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        }
       }
     ]
   }

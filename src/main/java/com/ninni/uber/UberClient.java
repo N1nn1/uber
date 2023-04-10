@@ -1,5 +1,6 @@
 package com.ninni.uber;
 
+import com.ninni.uber.registry.UberBlocks;
 import com.ninni.uber.registry.UberFluids;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -22,7 +23,12 @@ public class UberClient implements ClientModInitializer {
                 new ResourceLocation(MOD_ID, "block/mana_still"),
                 new ResourceLocation(MOD_ID, "block/mana_flow")
         ));
-
         BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(), UberFluids.MANA, UberFluids.FLOWING_MANA);
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
+                UberBlocks.PHASMOFOLLICLE,
+                UberBlocks.ISTALKS,
+                UberBlocks.TALL_ISTALKS
+        );
     }
 }

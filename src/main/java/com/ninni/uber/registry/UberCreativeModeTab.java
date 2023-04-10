@@ -12,6 +12,11 @@ public class UberCreativeModeTab {
         FabricItemGroup.builder(new ResourceLocation(MOD_ID,"item_group")).icon(DREADSTONE::getDefaultInstance).displayItems((featureFlagSet, output) -> {
                 output.accept(DREADSTONE);
                 output.accept(CROWNSTONE);
+                output.accept(MEDULESOIL);
+                output.accept(PHASMOFUZZ);
+                output.accept(PHASMOFOLLICLE);
+                output.accept(ISTALKS);
+                output.accept(TALL_ISTALKS);
                 output.accept(MANA_BUCKET);
         }).build();
 

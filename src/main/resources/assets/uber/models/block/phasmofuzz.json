@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "uber:block/medulesoil_top",
+    "side": "uber:block/phasmofuzz",
+    "top": "uber:block/phasmofuzz_top"
+  }
+}

@@ -25,18 +25,18 @@ public abstract class CameraMixin {
 
     @Inject(at = @At("RETURN"), method = "getFluidInCamera", cancellable = true)
     private void manaFogColor(CallbackInfoReturnable<FogType> cir) {
-            Camera.NearPlane nearPlane = this.getNearPlane();
-            List<Vec3> list = Arrays.asList(nearPlane.getTopLeft().subtract(nearPlane.getBottomRight()), nearPlane.getTopLeft(), nearPlane.getTopRight(), nearPlane.getBottomLeft(), nearPlane.getBottomRight());
-            for (Vec3 vec3 : list) {
-                Vec3 vec32 = this.position.add(vec3);
-                BlockPos blockPos = BlockPos.containing(vec32);
-                FluidState fluidState2 = this.level.getFluidState(blockPos);
-                if (fluidState2.is(UberTags.MANA)) {
-                    if (!(vec32.y <= (double) (fluidState2.getHeight(this.level, blockPos) + (float) blockPos.getY())))
-                        continue;
-                    cir.setReturnValue(UberFogTypes.MANA.get());
-                }
-            }
-
+    //        Camera.NearPlane nearPlane = this.getNearPlane();
+    //        List<Vec3> list = Arrays.asList(nearPlane.getTopLeft().subtract(nearPlane.getBottomRight()), nearPlane.getTopLeft(), nearPlane.getTopRight(), nearPlane.getBottomLeft(), nearPlane.getBottomRight());
+    //        for (Vec3 vec3 : list) {
+    //            Vec3 vec32 = this.position.add(vec3);
+    //            BlockPos blockPos = BlockPos.containing(vec32);
+    //            FluidState fluidState2 = this.level.getFluidState(blockPos);
+    //            if (fluidState2.is(UberTags.MANA)) {
+    //                if (!(vec32.y <= (double) (fluidState2.getHeight(this.level, blockPos) + (float) blockPos.getY())))
+    //                    continue;
+    //                cir.setReturnValue(UberFogTypes.MANA.get());
+    //            }
+    //        }
+    //
     }
 }

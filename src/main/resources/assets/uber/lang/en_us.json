@@ -2,7 +2,13 @@
 	"mod.uber.name": "Uber",
 	"itemGroup.uber.item_group": "Uber",
 
-	"item.uber.mana_bucket": "Mana Bucket",
 	"block.uber.dreadstone": "Dreadstone",
-	"block.uber.crownstone": "Crownstone"
+	"block.uber.crownstone": "Crownstone",
+	"block.uber.medulesoil": "Medulesoil",
+	"block.uber.phasmofuzz": "Phasmofuzz",
+	"block.uber.phasmofollicle": "Phasmofollicle",
+	"block.uber.istalks": "Istalks",
+	"block.uber.tall_istalks": "Tall Istalks",
+
+	"item.uber.mana_bucket": "Mana Bucket"
 }

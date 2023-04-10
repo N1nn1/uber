@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "uber:block/tall_istalks_bottom"
+    },
+    "half=upper": {
+      "model": "uber:block/tall_istalks_top"
+    }
+  }
+}

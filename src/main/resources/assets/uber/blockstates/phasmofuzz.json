@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "uber:block/phasmofuzz"
+      },
+      {
+        "model": "uber:block/phasmofuzz",
+        "y": 90
+      },
+      {
+        "model": "uber:block/phasmofuzz",
+        "y": 180
+      },
+      {
+        "model": "uber:block/phasmofuzz",
+        "y": 270
+      }
+    ]
+  }
+}

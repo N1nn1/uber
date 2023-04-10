@@ -21,28 +21,28 @@ public class FogRendererMixin {
 
     @Inject(at = @At("HEAD"), method = "setupColor")
     private static void manaFogColor(Camera camera, float f, ClientLevel clientLevel, int i, float g, CallbackInfo ci) {
-        FogType fogType = camera.getFluidInCamera();
-        if (fogType == UberFogTypes.MANA.get()) {
-            fogRed = 0.0f;
-            fogGreen = 0.6f;
-            fogBlue = 0.1f;
-            biomeChangedTime = -1L;
-        }
+        //FogType fogType = camera.getFluidInCamera();
+        //if (fogType == UberFogTypes.MANA.get()) {
+        //    fogRed = 0.0f;
+        //    fogGreen = 0.6f;
+        //    fogBlue = 0.1f;
+        //    biomeChangedTime = -1L;
+        //}
     }
 
     @Inject(at = @At("HEAD"), method = "setupFog")
     private static void setupManaFog(Camera camera, FogRenderer.FogMode fogMode, float f, boolean bl, float g, CallbackInfo ci) {
-        FogType fogType = camera.getFluidInCamera();
-        Entity entity = camera.getEntity();
-        FogRenderer.FogData fogData = new FogRenderer.FogData(fogMode);
-        if (fogType == UberFogTypes.MANA.get()) {
-            if (entity.isSpectator()) {
-                fogData.start = -8.0f;
-                fogData.end = f * 0.5f;
-            } else {
-                fogData.start = 0.25f;
-                fogData.end = 1.0f;
-            }
-        }
+        //FogType fogType = camera.getFluidInCamera();
+        //Entity entity = camera.getEntity();
+        //FogRenderer.FogData fogData = new FogRenderer.FogData(fogMode);
+        //if (fogType == UberFogTypes.MANA.get()) {
+        //    if (entity.isSpectator()) {
+        //        fogData.start = -8.0f;
+        //        fogData.end = f * 0.5f;
+        //    } else {
+        //        fogData.start = 0.25f;
+        //        fogData.end = 1.0f;
+        //    }
+        //}
     }
 }
