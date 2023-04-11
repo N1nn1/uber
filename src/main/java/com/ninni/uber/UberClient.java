@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.InventoryMenu;
 
 import static com.ninni.uber.Uber.MOD_ID;
 
@@ -23,6 +24,7 @@ public class UberClient implements ClientModInitializer {
                 new ResourceLocation(MOD_ID, "block/mana_still"),
                 new ResourceLocation(MOD_ID, "block/mana_flow")
         ));
+
         BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(), UberFluids.MANA, UberFluids.FLOWING_MANA);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
