@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 public class UberItems {
 
     public static final Item DREADSTONE = register("dreadstone", new BlockItem(UberBlocks.DREADSTONE, new FabricItemSettings()));
+    public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));
     public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
     public static final Item MEDULESOIL = register("medulesoil", new BlockItem(UberBlocks.MEDULESOIL, new FabricItemSettings()));
     public static final Item PHASMOFUZZ = register("phasmofuzz", new BlockItem(UberBlocks.PHASMOFUZZ, new FabricItemSettings()));

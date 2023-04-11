@@ -11,7 +11,7 @@
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
-      "sound": "minecraft:ambient.nether_wastes.mood",
+      "sound": "minecraft:ambient.uber.grymmoth",
       "tick_delay": 6000
     },
     "music": {
@@ -20,25 +20,17 @@
       "replace_current_music": false,
       "sound": "minecraft:music.nether.nether_wastes"
     },
+    "particle": {
+      "options": {
+        "type": "minecraft:warped_spore"
+      },
+      "probability": 0.01428
+    },
     "sky_color": 0,
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal"
-    ]
-  ],
+  "features": [],
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {

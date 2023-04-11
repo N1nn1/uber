@@ -9,8 +9,9 @@ import static com.ninni.uber.registry.UberItems.*;
 public class UberCreativeModeTab {
 
     static {
-        FabricItemGroup.builder(new ResourceLocation(MOD_ID,"item_group")).icon(DREADSTONE::getDefaultInstance).displayItems((featureFlagSet, output) -> {
+        FabricItemGroup.builder(new ResourceLocation(MOD_ID,"item_group")).icon(PHASMOFUZZ::getDefaultInstance).displayItems((featureFlagSet, output) -> {
                 output.accept(DREADSTONE);
+                output.accept(MELLOROCK);
                 output.accept(CROWNSTONE);
                 output.accept(MEDULESOIL);
                 output.accept(PHASMOFUZZ);

@@ -19,7 +19,8 @@ public class UberBiomeProvider extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
-        add(registries, entries, UberBiomes.LUMINOUS_WASTELAND);
+        add(registries, entries, UberBiomes.GRYMMOTH_WASTES);
+        add(registries, entries, UberBiomes.PHASMO_FOREST);
     }
 
     private void add(HolderLookup.Provider registries, Entries entries, ResourceKey<Biome> biome) {

@@ -150,7 +150,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:vertical_gradient",
-          "random_name": "uber:dreadstone",
+          "random_name": "uber:mellorock",
           "true_at_and_below": {
             "absolute": 100
           },
@@ -161,7 +161,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "minecraft:stone",
+            "Name": "uber:mellorock",
             "Properties": {
               "axis": "y"
             }
