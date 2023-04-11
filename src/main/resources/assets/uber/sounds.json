@@ -1,0 +1,20 @@
+{
+  "ambient.uber.grymmoth": {
+    "sounds": [
+      "uber:ambient/grymmoth/mood1",
+      "uber:ambient/grymmoth/mood2",
+      "uber:ambient/grymmoth/mood3",
+      "uber:ambient/grymmoth/mood4",
+      "uber:ambient/grymmoth/mood5",
+      "uber:ambient/grymmoth/movement1",
+      "uber:ambient/grymmoth/movement2",
+      "uber:ambient/grymmoth/movement3",
+      "uber:ambient/grymmoth/movement4",
+      "uber:ambient/grymmoth/movement5",
+      "uber:ambient/grymmoth/movement6",
+      "uber:ambient/grymmoth/rattle1",
+      "uber:ambient/grymmoth/rattle2",
+      "uber:ambient/grymmoth/rattle3"
+    ]
+  }
+}

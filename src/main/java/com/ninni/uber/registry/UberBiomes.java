@@ -41,7 +41,7 @@ public class UberBiomes {
                                 .fogColor(0)
                                 .skyColor(0)
                                 .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
-                                .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_NETHER_WASTES_MOOD, 6000, 8, 2.0))
+                                .ambientMoodSound(new AmbientMoodSettings(UberSoundEvents.AMBIENT_UBER_GRYMMOTH, 6000, 8, 2.0))
                                 .ambientAdditionsSound(new AmbientAdditionsSettings(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111))
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
                                 .build()
