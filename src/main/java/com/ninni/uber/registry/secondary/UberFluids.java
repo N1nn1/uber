@@ -1,4 +1,4 @@
-package com.ninni.uber.registry;
+package com.ninni.uber.registry.secondary;
 
 import com.ninni.uber.fluid.ManaFluid;
 import net.minecraft.core.Registry;

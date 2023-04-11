@@ -1,6 +1,6 @@
 package com.ninni.uber.mixin.client;
 
-import com.ninni.uber.registry.UberSkyTypes;
+import com.ninni.uber.registry.secondary.UberSkyTypes;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

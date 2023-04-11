@@ -2,7 +2,8 @@ package com.ninni.uber.fluid;
 
 import com.ninni.uber.UberTags;
 import com.ninni.uber.registry.UberBlocks;
-import com.ninni.uber.registry.UberFluids;
+import com.ninni.uber.registry.secondary.UberFluids;
+import com.ninni.uber.registry.secondary.UberGameRules;
 import com.ninni.uber.registry.UberItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,10 +13,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -50,7 +48,7 @@ public class ManaFluid extends FlowingFluid {
 
     @Override
     protected boolean canConvertToSource(Level level) {
-        return false;
+        return level.getGameRules().getBoolean(UberGameRules.RULE_MANA_SOURCE_CONVERSION);
     }
 
     @Override

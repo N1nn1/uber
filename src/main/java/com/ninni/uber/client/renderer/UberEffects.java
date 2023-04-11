@@ -1,6 +1,6 @@
 package com.ninni.uber.client.renderer;
 
-import com.ninni.uber.registry.UberSkyTypes;
+import com.ninni.uber.registry.secondary.UberSkyTypes;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.DimensionSpecialEffects;

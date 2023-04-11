@@ -1,8 +1,6 @@
 package com.ninni.uber.mixin;
 
-import com.ninni.uber.registry.UberFogTypes;
-import com.ninni.uber.registry.UberSkyTypes;
-import net.minecraft.client.renderer.DimensionSpecialEffects;
+import com.ninni.uber.registry.secondary.UberFogTypes;
 import net.minecraft.world.level.material.FogType;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

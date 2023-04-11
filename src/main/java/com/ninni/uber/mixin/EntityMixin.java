@@ -19,14 +19,11 @@ public abstract class EntityMixin {
     @Shadow public abstract Vec3 getDeltaMovement();
     @Shadow public abstract BlockState getFeetBlockState();
     @Shadow public abstract void resetFallDistance();
-
     @Shadow public abstract boolean isSpectator();
 
     @Inject(at = @At("HEAD"), method = "baseTick")
     private void addManaEffects(CallbackInfo ci) {
-        if ((Entity)(Object)this instanceof Player player && player.isNoGravity()) {
-            return;
-        }
+        if ((Entity)(Object)this instanceof Player player && player.getAbilities().flying) return;
         if (this.getFeetBlockState().getFluidState().is(UberTags.MANA) && !this.isSpectator()) {
             this.setDeltaMovement(this.getDeltaMovement().add(0.0f, 0.2f, 0.0f));
             this.resetFallDistance();

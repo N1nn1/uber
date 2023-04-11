@@ -1,4 +1,4 @@
-package com.ninni.uber.registry;
+package com.ninni.uber.registry.secondary;
 
 import com.ninni.uber.Uber;
 import net.minecraft.resources.ResourceLocation;

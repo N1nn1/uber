@@ -1,4 +1,4 @@
-package com.ninni.uber.registry;
+package com.ninni.uber.registry.secondary;
 
 import net.minecraft.world.level.material.FogType;
 

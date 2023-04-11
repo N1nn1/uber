@@ -2,6 +2,7 @@ package com.ninni.uber.registry;
 
 import com.ninni.uber.Uber;
 import com.ninni.uber.block.*;
+import com.ninni.uber.registry.secondary.UberFluids;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

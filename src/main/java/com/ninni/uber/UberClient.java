@@ -1,7 +1,7 @@
 package com.ninni.uber;
 
 import com.ninni.uber.registry.UberBlocks;
-import com.ninni.uber.registry.UberFluids;
+import com.ninni.uber.registry.secondary.UberFluids;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

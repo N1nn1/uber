@@ -1,7 +1,7 @@
 package com.ninni.uber.mixin.client;
 
 import com.ninni.uber.client.renderer.UberEffects;
-import com.ninni.uber.registry.UberBuiltinDimensionTypes;
+import com.ninni.uber.registry.secondary.UberBuiltinDimensionTypes;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.resources.ResourceLocation;
