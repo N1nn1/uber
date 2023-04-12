@@ -7,7 +7,7 @@
       "tick_chance": 0.0111
     },
     "ambient_sound": "uber:ambient.uber.elysium_fields.loop",
-    "fog_color": 0,
+    "fog_color": 4662533,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -20,13 +20,7 @@
       "replace_current_music": false,
       "sound": "minecraft:music.nether.nether_wastes"
     },
-    "particle": {
-      "options": {
-        "type": "minecraft:crimson_spore"
-      },
-      "probability": 0.01428
-    },
-    "sky_color": 0,
+    "sky_color": 4662533,
     "water_color": 4159204,
     "water_fog_color": 329011
   },

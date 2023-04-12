@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
 @Environment(EnvType.CLIENT)
 public class UberEffects extends DimensionSpecialEffects {
@@ -15,11 +16,17 @@ public class UberEffects extends DimensionSpecialEffects {
 
     @Override
     public Vec3 getBrightnessDependentFogColor(Vec3 vec3, float f) {
-        return vec3;
+        return vec3.scale(0.15f);
     }
 
     @Override
     public boolean isFoggyAt(int i, int j) {
         return false;
+    }
+
+    @Override
+    @Nullable
+    public float[] getSunriseColor(float f, float g) {
+        return null;
     }
 }

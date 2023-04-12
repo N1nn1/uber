@@ -10,7 +10,7 @@
   "coordinate_scale": 12,
   "ambient_light": 0,
   "logical_height": 256,
-  "fixed_time": 6000,
+  "fixed_time": 8000,
   "effects": "uber:the_uber",
   "infiniburn": "#minecraft:infiniburn_end",
   "min_y": 0,
