@@ -25,7 +25,7 @@ public class SoilPatchFeature extends Feature<NoneFeatureConfiguration> {
         if (!world.getBlockState(blockPos).is(UberTags.BASE_BLOCKS_GRYMMOTH)) {
             return false;
         } else {
-            int radius = 8;
+            int radius = Mth.nextInt(randomSource, 4, 8);
             for (int x = -radius; x <= radius; x++) {
                 for (int z = -radius; z <= radius; z++) {
                     for (int y = -radius; y <= radius; y++) {

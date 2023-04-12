@@ -36,7 +36,7 @@ public class UberPlacedFeatures {
         Holder.Reference<ConfiguredFeature<?, ?>> holder = holderGetter.getOrThrow(UberConfiguredFeatures.PHASMOFUZZ_SURFACE);
         Holder.Reference<ConfiguredFeature<?, ?>> holder1 = holderGetter.getOrThrow(UberConfiguredFeatures.ORE_MEDULESOIL);
         PlacementUtils.register(bootstapContext, PHASMOFUZZ_SURFACE, holder, CountPlacement.of(100), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-        PlacementUtils.register(bootstapContext, ORE_MEDULESOIL, holder1, CountPlacement.of(160), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, ORE_MEDULESOIL, holder1, CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
     }
 
     private static List<PlacementModifier> commonOrePlacement(int i, PlacementModifier placementModifier) {
