@@ -12,8 +12,9 @@ public interface UberSoundEvents {
     Holder.Reference<SoundEvent> AMBIENT_UBER_GRYMMOTH = registerForHolder("ambient.uber.grymmoth");
 
 
-    private static Holder.Reference<SoundEvent> registerForHolder(String string) {
-        return Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, new ResourceLocation(string), SoundEvent.createVariableRangeEvent(new ResourceLocation(string)));
+    private static Holder.Reference<SoundEvent> registerForHolder(String name) {
+        ResourceLocation id = new ResourceLocation(Uber.MOD_ID, name);
+        return Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
     }
 
     private static SoundEvent register(String name) {
