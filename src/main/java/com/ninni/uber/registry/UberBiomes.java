@@ -106,7 +106,7 @@ public class UberBiomes {
     public static Biome phasmoForest(BootstapContext<Biome> bootstapContext) {
         HolderGetter<PlacedFeature> holderGetter = bootstapContext.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> holderGetter2 = bootstapContext.lookup(Registries.CONFIGURED_CARVER);
-        BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder(holderGetter, holderGetter2).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.PHASMOFUZZ_SURFACE).addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, UberPlacedFeatures.ORE_MEDULESOIL));
+        BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder(holderGetter, holderGetter2).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.PHASMOFUZZ_SURFACE).addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, UberPlacedFeatures.ORE_MEDULESOIL).addFeature(GenerationStep.Decoration.LAKES, UberPlacedFeatures.LAKE_MANA));
 
         MobSpawnSettings mobSpawnSettings =
                 (new MobSpawnSettings.Builder())
