@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "uber:phasmofollicle"
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "Name": "uber:istalks"
+          },
+          "weight": 7
+        },
+        {
+          "data": {
+            "Name": "uber:tall_istalks",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

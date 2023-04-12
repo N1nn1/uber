@@ -12,6 +12,7 @@ public interface UberTags {
     //block tags
     TagKey<Block> MEDULESOIL = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "medulesoil"));
     TagKey<Block> FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "fuzz"));
+    TagKey<Block> BASE_STONE_GRYMMOTH = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "base_stone_grymmoth")) ;
 
     //fluid tags
     TagKey<Fluid> MANA = TagKey.create(Registries.FLUID, new ResourceLocation(MOD_ID, "mana"));

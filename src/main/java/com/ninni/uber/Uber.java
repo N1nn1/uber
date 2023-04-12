@@ -12,6 +12,7 @@ public class Uber implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		Reflection.initialize(
+				UberFeatures.class,
 				UberItems.class,
 				UberBlocks.class,
 				UberFluids.class,
