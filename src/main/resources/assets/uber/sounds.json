@@ -16,5 +16,59 @@
       "uber:ambient/grymmoth/rattle2",
       "uber:ambient/grymmoth/rattle3"
     ]
+  },
+  "ambient.uber.grymmoth.loop": {
+    "sounds": [
+      {
+        "name": "uber:ambient/grymmoth/ambience",
+        "stream": true,
+        "volume": 0.5
+      }
+    ]
+  },
+  "ambient.uber.estace": {
+    "sounds": [
+      "uber:ambient/estace/chimes1",
+      "uber:ambient/estace/chimes2",
+      "uber:ambient/estace/chimes3",
+      "uber:ambient/estace/chimes4",
+      "uber:ambient/estace/mood1",
+      "uber:ambient/estace/mood2",
+      "uber:ambient/estace/mood3",
+      "uber:ambient/estace/mood4",
+      "uber:ambient/estace/mood5",
+      "uber:ambient/estace/wings1",
+      "uber:ambient/estace/wings2",
+      "uber:ambient/estace/wings3",
+      "uber:ambient/estace/wings4",
+      "uber:ambient/estace/wings5"
+    ]
+  },
+  "ambient.uber.estace.loop": {
+    "sounds": [
+      {
+        "name": "uber:ambient/estace/ambience",
+        "stream": true,
+        "volume": 0.77
+      }
+    ]
+  },
+  "ambient.uber.elysium_fields.loop": {
+    "sounds": [
+      {
+        "name": "uber:ambient/elysium_fields/ambience",
+        "stream": true,
+        "volume": 0.77
+      }
+    ]
+  },
+  "ambient.uber.phasmo_forest.loop": {
+    "sounds": [
+      {
+        "name": "uber:ambient/phasmo_forest/ambience",
+        "stream": true,
+        "volume": 0.77
+      }
+    ]
   }
 }

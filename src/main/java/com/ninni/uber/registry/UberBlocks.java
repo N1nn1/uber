@@ -18,8 +18,8 @@ public class UberBlocks {
     public static final Block MEDULESOIL = register("medulesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
     public static final Block PHASMOFUZZ = register("phasmofuzz", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
     public static final Block PHASMOFOLLICLE = register("phasmofollicle", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS)));
-    public static final Block ISTALKS = register("istalks", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS)));
-    public static final Block TALL_ISTALKS = register("tall_istalks", new UberTallVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.PEONY)));
+    public static final Block ISTALKS = register("istalks", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS).luminance(blockState -> 3)));
+    public static final Block TALL_ISTALKS = register("tall_istalks", new UberTallVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.PEONY).luminance(blockState -> 5)));
 
     public static final Block MANA = register("mana", new LiquidBlock(UberFluids.MANA, FabricBlockSettings.of(Material.WATER).noCollission().strength(100.0F).lightLevel(blockState -> 15).noLootTable()));
 
