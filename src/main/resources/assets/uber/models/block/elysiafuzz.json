@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "bottom": "uber:block/crownstone",
+    "bottom": "uber:block/mellorock",
     "side": "uber:block/elysiafuzz",
     "top": "uber:block/elysiafuzz_top"
   }
