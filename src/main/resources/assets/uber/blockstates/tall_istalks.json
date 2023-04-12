@@ -3,8 +3,19 @@
     "half=lower": {
       "model": "uber:block/tall_istalks_bottom"
     },
-    "half=upper": {
-      "model": "uber:block/tall_istalks_top"
-    }
+    "half=upper": [
+      {
+        "model": "uber:block/tall_istalks_top",
+        "weight": 80
+      },
+      {
+        "model": "uber:block/tall_istalks_top_blinking",
+        "weight": 10
+      },
+      {
+        "model": "uber:block/tall_istalks_top_looking",
+        "weight": 10
+      }
+    ]
   }
 }

@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "uber:block/istalks"
-    }
+    "": [
+      {
+        "model": "uber:block/istalks",
+        "weight": 80
+      },
+      {
+        "model": "uber:block/istalks_blinking",
+        "weight": 10
+      },
+      {
+        "model": "uber:block/istalks_looking",
+        "weight": 10
+      }
+    ]
   }
 }
