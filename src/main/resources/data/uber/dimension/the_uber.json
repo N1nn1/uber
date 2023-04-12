@@ -25,7 +25,7 @@
           }
         },
         {
-          "biome": "uber:estace_wastes",
+          "biome": "uber:ecstace_wastes",
           "parameters": {
             "temperature": [
               0.25,

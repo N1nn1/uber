@@ -26,28 +26,28 @@
       }
     ]
   },
-  "ambient.uber.estace": {
+  "ambient.uber.ecstace": {
     "sounds": [
-      "uber:ambient/estace/chimes1",
-      "uber:ambient/estace/chimes2",
-      "uber:ambient/estace/chimes3",
-      "uber:ambient/estace/chimes4",
-      "uber:ambient/estace/mood1",
-      "uber:ambient/estace/mood2",
-      "uber:ambient/estace/mood3",
-      "uber:ambient/estace/mood4",
-      "uber:ambient/estace/mood5",
-      "uber:ambient/estace/wings1",
-      "uber:ambient/estace/wings2",
-      "uber:ambient/estace/wings3",
-      "uber:ambient/estace/wings4",
-      "uber:ambient/estace/wings5"
+      "uber:ambient/ecstace/chimes1",
+      "uber:ambient/ecstace/chimes2",
+      "uber:ambient/ecstace/chimes3",
+      "uber:ambient/ecstace/chimes4",
+      "uber:ambient/ecstace/mood1",
+      "uber:ambient/ecstace/mood2",
+      "uber:ambient/ecstace/mood3",
+      "uber:ambient/ecstace/mood4",
+      "uber:ambient/ecstace/mood5",
+      "uber:ambient/ecstace/wings1",
+      "uber:ambient/ecstace/wings2",
+      "uber:ambient/ecstace/wings3",
+      "uber:ambient/ecstace/wings4",
+      "uber:ambient/ecstace/wings5"
     ]
   },
-  "ambient.uber.estace.loop": {
+  "ambient.uber.ecstace.loop": {
     "sounds": [
       {
-        "name": "uber:ambient/estace/ambience",
+        "name": "uber:ambient/ecstace/ambience",
         "stream": true,
         "volume": 0.77
       }

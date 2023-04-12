@@ -12,7 +12,7 @@
   "logical_height": 256,
   "fixed_time": 8000,
   "effects": "uber:the_uber",
-  "infiniburn": "#minecraft:infiniburn_end",
+  "infiniburn": "#uber:infiniburn_uber",
   "min_y": 0,
   "height": 320,
   "monster_spawn_light_level": {

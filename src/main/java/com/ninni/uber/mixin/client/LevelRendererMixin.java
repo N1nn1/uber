@@ -42,7 +42,7 @@ public abstract class LevelRendererMixin {
             this.renderShootingStars(poseStack, bufferBuilder, 55, 1.2f, 3);
             this.renderShootingStars(poseStack, bufferBuilder, 47, -0.35f, 6);
             this.renderShootingStars(poseStack, bufferBuilder, 31, 0.5f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, 23, -0.7f, 5);
+            this.renderShootingStars(poseStack, bufferBuilder, 23, -0.5f, 5);
             this.renderShootingStars(poseStack, bufferBuilder, 7, 0.7f, 4);
             this.renderShootingStars(poseStack, bufferBuilder, -10, -1f, 4);
             this.renderShootingStars(poseStack, bufferBuilder, -20, 1.2f, 3);

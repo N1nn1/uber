@@ -14,6 +14,7 @@ public interface UberTags {
     TagKey<Block> FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "fuzz"));
     TagKey<Block> PHASMOFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "phasmofuzz_replaces")) ;
     TagKey<Block> BASE_BLOCKS_GRYMMOTH = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "base_blocks_grymmoth")) ;
+    TagKey<Block> INFINIBURN_UBER = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "infiniburn_uber")) ;
 
     //fluid tags
     TagKey<Fluid> MANA = TagKey.create(Registries.FLUID, new ResourceLocation(MOD_ID, "mana"));

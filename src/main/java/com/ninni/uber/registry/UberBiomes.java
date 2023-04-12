@@ -17,11 +17,11 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class UberBiomes {
 
     public static final ResourceKey<Biome> GRYMMOTH_WASTES = register("grymmoth_wastes");
-    public static final ResourceKey<Biome> ESTACE_WASTES = register("estace_wastes");
+    public static final ResourceKey<Biome> ECSTACE_WASTES = register("ecstace_wastes");
     public static final ResourceKey<Biome> PHASMO_FOREST = register("phasmo_forest");
     public static final ResourceKey<Biome> ELYSIUM_FIELDS = register("elysium_fields");
 
-    public static Biome estaceWastes(BootstapContext<Biome> bootstapContext) {
+    public static Biome ecstaceWastes(BootstapContext<Biome> bootstapContext) {
         HolderGetter<PlacedFeature> holderGetter = bootstapContext.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> holderGetter2 = bootstapContext.lookup(Registries.CONFIGURED_CARVER);
         MobSpawnSettings mobSpawnSettings = (new MobSpawnSettings.Builder()).build();
@@ -37,9 +37,9 @@ public class UberBiomes {
                                 .waterFogColor(329011)
                                 .fogColor(6249561)
                                 .skyColor(6249561)
-                                .ambientLoopSound(UberSoundEvents.AMBIENT_UBER_ESTACE_LOOP)
-                                .ambientMoodSound(new AmbientMoodSettings(UberSoundEvents.AMBIENT_UBER_ESTACE, 6000, 8, 2.0))
-                                .ambientAdditionsSound(new AmbientAdditionsSettings(UberSoundEvents.AMBIENT_UBER_ESTACE_ADDITIONS, 0.0111))
+                                .ambientLoopSound(UberSoundEvents.AMBIENT_UBER_ECSTACE_LOOP)
+                                .ambientMoodSound(new AmbientMoodSettings(UberSoundEvents.AMBIENT_UBER_ECSTACE, 6000, 8, 2.0))
+                                .ambientAdditionsSound(new AmbientAdditionsSettings(UberSoundEvents.AMBIENT_UBER_ECSTACE_ADDITIONS, 0.0111))
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
                                 .build()
                 )
@@ -66,7 +66,7 @@ public class UberBiomes {
                                 .skyColor(4662533)
                                 //.ambientParticle(new AmbientParticleSettings(ParticleTypes.CRIMSON_SPORE, 0.01428f))
                                 .ambientLoopSound(UberSoundEvents.AMBIENT_UBER_ELYSIUM_FIELDS_LOOP)
-                                .ambientMoodSound(new AmbientMoodSettings(UberSoundEvents.AMBIENT_UBER_ESTACE, 6000, 8, 2.0))
+                                .ambientMoodSound(new AmbientMoodSettings(UberSoundEvents.AMBIENT_UBER_ECSTACE, 6000, 8, 2.0))
                                 .ambientAdditionsSound(new AmbientAdditionsSettings(UberSoundEvents.AMBIENT_UBER_ELYSIUM_FIELDS_ADDITIONS, 0.0111))
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
                                 .build()
@@ -137,7 +137,7 @@ public class UberBiomes {
     }
 
     public static void bootstrap(BootstapContext<Biome> biomeRegisterable) {
-        biomeRegisterable.register(ESTACE_WASTES, UberBiomes.estaceWastes(biomeRegisterable));
+        biomeRegisterable.register(ECSTACE_WASTES, UberBiomes.ecstaceWastes(biomeRegisterable));
         biomeRegisterable.register(GRYMMOTH_WASTES, UberBiomes.grymmothWastes(biomeRegisterable));
         biomeRegisterable.register(PHASMO_FOREST, UberBiomes.phasmoForest(biomeRegisterable));
         biomeRegisterable.register(ELYSIUM_FIELDS, UberBiomes.elysiumFields(biomeRegisterable));
