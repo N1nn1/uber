@@ -10,9 +10,9 @@
         "Name": "uber:phasmofuzz"
       }
     },
-    "replaceable": "#uber:base_stone_grymmoth",
+    "replaceable": "#uber:phasmofuzz_replaces",
     "surface": "floor",
-    "vegetation_chance": 0.8,
+    "vegetation_chance": 0.05,
     "vegetation_feature": {
       "feature": "uber:phasmofuzz_vegetation",
       "placement": []

@@ -75,7 +75,7 @@ public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration
 
     protected void distributeVegetation(FeaturePlaceContext<VegetationPatchConfiguration> featurePlaceContext, WorldGenLevel worldGenLevel, VegetationPatchConfiguration vegetationPatchConfiguration, RandomSource randomSource, Set<BlockPos> set, int i, int j) {
         for (BlockPos blockPos : set) {
-            if (!(vegetationPatchConfiguration.vegetationChance > 0.0f) || !(randomSource.nextFloat() < vegetationPatchConfiguration.vegetationChance)) continue;
+            if (randomSource.nextFloat() > vegetationPatchConfiguration.vegetationChance) continue;
             this.placeVegetation(worldGenLevel, vegetationPatchConfiguration, featurePlaceContext.chunkGenerator(), randomSource, blockPos);
         }
     }

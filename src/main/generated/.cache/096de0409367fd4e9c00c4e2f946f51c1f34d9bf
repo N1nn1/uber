@@ -1,3 +1,4 @@
-// 1.19.4	2023-04-12T10:21:50.1565718	Uber/worldgen/configured_feature
-3de4f50d122effa8ff80ddfebe9e0f3bd47e5266 data\uber\worldgen\configured_feature\phasmofuzz_surface.json
-b1d7d1a91f3ab06bc0c374c559c1b958b1b3eacb data\uber\worldgen\configured_feature\phasmofuzz_vegetation.json
+// 1.19.4	2023-04-12T11:36:05.2375836	Uber/worldgen/configured_feature
+752ac760b674e799521cbbb4d506694197f47a48 data\uber\worldgen\configured_feature\phasmofuzz_surface.json
+b565911b86e96ffce35d388f573e7a1c08ba8678 data\uber\worldgen\configured_feature\medulesoil_patch.json
+0bf5e99e2d973daca1a689b88e084e1cdb1bfdda data\uber\worldgen\configured_feature\phasmofuzz_vegetation.json

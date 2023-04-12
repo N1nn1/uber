@@ -33,7 +33,9 @@
   "features": [
     [],
     [],
-    [],
+    [
+      "uber:ore_medulesoil"
+    ],
     [],
     [],
     [],

@@ -15,6 +15,7 @@ public class UberVegetalDecoBlock extends TallGrassBlock {
         super(properties);
     }
 
+    @Override
     protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return blockState.is(UberTags.FUZZ);
     }
