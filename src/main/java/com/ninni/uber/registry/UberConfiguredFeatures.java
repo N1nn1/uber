@@ -33,6 +33,7 @@ public class UberConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ELYSIAFUZZ_VEGETATION = createKey("elysiafuzz_vegetation");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_MEDULESOIL = createKey("medulesoil_patch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LAKE_MANA = createKey("lake_mana");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MARROW_TREE = createKey("marrow_tree");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> bootstapContext) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = bootstapContext.lookup(Registries.CONFIGURED_FEATURE);
@@ -43,6 +44,7 @@ public class UberConfiguredFeatures {
         FeatureUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_SURFACE, UberFeatures.GRYMMOTH_SURFACE, new UberSurfaceConfig(UberTags.MELLOW_ELYSIAFUZZ_REPLACES, BlockStateProvider.simple(UberBlocks.MELLOW_ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.MELLOROCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(4, 7), 0.3f));
         FeatureUtils.register(bootstapContext, ORE_MEDULESOIL, UberFeatures.SOIL_PATCH, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, LAKE_MANA, Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(UberBlocks.MANA.defaultBlockState()), BlockStateProvider.simple(UberBlocks.DREADSTONE.defaultBlockState())));
+        FeatureUtils.register(bootstapContext, MARROW_TREE, UberFeatures.MARROW_TREE, NoneFeatureConfiguration.INSTANCE);
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String string) {

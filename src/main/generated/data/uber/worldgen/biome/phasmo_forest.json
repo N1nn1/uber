@@ -45,7 +45,8 @@
     [],
     [],
     [
-      "uber:phasmofuzz_surface"
+      "uber:phasmofuzz_surface",
+      "uber:marrow_tree"
     ]
   ],
   "has_precipitation": false,
