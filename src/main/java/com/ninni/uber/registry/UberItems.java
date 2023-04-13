@@ -19,6 +19,8 @@ public class UberItems {
     public static final Item PHASMOFOLLICLE = register("phasmofollicle", new BlockItem(UberBlocks.PHASMOFOLLICLE, new FabricItemSettings()));
     public static final Item ISTALKS = register("istalks", new BlockItem(UberBlocks.ISTALKS, new FabricItemSettings()));
     public static final Item TALL_ISTALKS = register("tall_istalks", new DoubleHighBlockItem(UberBlocks.TALL_ISTALKS, new FabricItemSettings()));
+    public static final Item MARROW = register("marrow", new DoubleHighBlockItem(UberBlocks.MARROW, new FabricItemSettings()));
+    public static final Item MARROW_PLANKS = register("marrow_planks", new DoubleHighBlockItem(UberBlocks.MARROW_PLANKS, new FabricItemSettings()));
     public static final Item MANA_BUCKET = register("mana_bucket", new BucketItem(UberFluids.MANA, new FabricItemSettings().maxCount(1)));
 
     public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "uber:block/marrow_top",
+    "side": "uber:block/marrow"
+  }
+}

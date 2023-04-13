@@ -16,6 +16,8 @@ public class UberCreativeModeTab {
             output.accept(PHASMOFOLLICLE);
             output.accept(ISTALKS);
             output.accept(TALL_ISTALKS);
+            output.accept(MARROW);
+            output.accept(MARROW_PLANKS);
             output.accept(MANA_BUCKET);
 
             output.accept(MELLOROCK);

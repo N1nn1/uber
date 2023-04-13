@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "uber:block/marrow",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "uber:block/marrow"
+    },
+    "axis=z": {
+      "model": "uber:block/marrow",
+      "x": 90
+    }
+  }
+}

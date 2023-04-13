@@ -20,7 +20,7 @@
             "continentalness": 0.1,
             "erosion": 0.1,
             "weirdness": 0.2,
-            "depth": 0,
+            "depth": -0.9,
             "offset": 0
           }
         },
@@ -32,10 +32,10 @@
               0.75
             ],
             "humidity": 0,
-            "continentalness": 0.1,
+            "continentalness": -0.3,
             "erosion": 0.1,
             "weirdness": 0.2,
-            "depth": 0,
+            "depth": -0.9,
             "offset": 0
           }
         },
@@ -51,9 +51,9 @@
               0.3
             ],
             "continentalness": 0.1,
-            "erosion": 0.1,
+            "erosion": -0.1,
             "weirdness": 1,
-            "depth": 1,
+            "depth": 0.1,
             "offset": 0
           }
         },
@@ -66,9 +66,9 @@
             ],
             "humidity": 0,
             "continentalness": 0.1,
-            "erosion": 0.1,
+            "erosion": 0.2,
             "weirdness": 1,
-            "depth": 1,
+            "depth": 0.1,
             "offset": 0
           }
         }

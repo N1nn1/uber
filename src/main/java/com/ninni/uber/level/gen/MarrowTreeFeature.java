@@ -8,7 +8,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.DripstoneUtils;
@@ -39,14 +38,14 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
             Direction randomDirection = Direction.Plane.HORIZONTAL.getRandomDirection(random);
             for (int y = 0; y < height; y++) {
                 if (y == height / 2) {
-                    world.setBlock(mutableBlockPos, Blocks.BONE_BLOCK.defaultBlockState(), 2);
+                    world.setBlock(mutableBlockPos, UberBlocks.MARROW.defaultBlockState(), 2);
                     mutableBlockPos.move(randomDirection);
                 }
                 if (!world.getBlockState(mutableBlockPos).getMaterial().isReplaceable()) continue;
-                world.setBlock(mutableBlockPos, Blocks.BONE_BLOCK.defaultBlockState(), 2);
+                world.setBlock(mutableBlockPos, UberBlocks.MARROW.defaultBlockState(), 2);
                 mutableBlockPos.move(Direction.UP);
                 if (y == height - 1) {
-                    this.generateHand(world, mutableBlockPos, random, randomDirection);
+                    this.generateHand(world, mutableBlockPos, randomDirection);
                 }
             }
             for (Direction direction : Direction.Plane.HORIZONTAL) {
@@ -72,7 +71,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     private boolean placeRoot(WorldGenLevel world, BlockPos blockPos, RandomSource random, Direction direction, int tries) {
-        Block block = Blocks.BONE_BLOCK;
+        Block block = UberBlocks.MARROW;
         int maxTries = 5;
         if (tries == maxTries) {
             return this.repeatPlace(world, blockPos, block);
@@ -106,12 +105,12 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
-    public void generateHand(WorldGenLevel world, BlockPos blockPos, RandomSource randomSource, Direction offsetDirection) {
+    public void generateHand(WorldGenLevel world, BlockPos blockPos, Direction offsetDirection) {
         int range = 1;
         for (int x = -range; x <= range; x++) {
             for (int z = -range; z <= range; z++) {
                 BlockPos baseHand = new BlockPos(blockPos.getX() + x, blockPos.getY(), blockPos.getZ() + z);
-                BlockState bone = Blocks.BONE_BLOCK.defaultBlockState().setValue(RotatedPillarBlock.AXIS, offsetDirection.getAxis());
+                BlockState bone = UberBlocks.MARROW.defaultBlockState().setValue(RotatedPillarBlock.AXIS, offsetDirection.getAxis());
                 world.setBlock(baseHand, bone, 2);
                 if (x == 0 || z == 0 && world.getBlockState(baseHand.relative(offsetDirection.getOpposite())).isAir()) {
                     world.setBlock(blockPos.relative(offsetDirection.getOpposite(), 2), bone, 2);
@@ -126,7 +125,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
     private void generateRemainings(WorldGenLevel world, BlockPos blockPos, Direction offsetDirection, BlockState bone) {
         for (int i = 1; i <= 3; i++) {
             BlockPos fingerPos = blockPos.relative(offsetDirection.getOpposite(), 3).relative(offsetDirection.getCounterClockWise(), 2).above(i);
-            world.setBlock(fingerPos, Blocks.BONE_BLOCK.defaultBlockState(), 2);
+            world.setBlock(fingerPos, UberBlocks.MARROW.defaultBlockState(), 2);
             if (i <= 2) {
                 world.setBlock(blockPos.relative(offsetDirection.getOpposite(), i).relative(offsetDirection.getCounterClockWise(), 2), bone, 2);
             }
@@ -135,7 +134,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
             }
             world.setBlock(blockPos.relative(offsetDirection, i - 3).relative(offsetDirection.getClockWise(), 2), bone, 2);
             BlockPos secondaryFingerPos = blockPos.relative(offsetDirection.getOpposite(), 3).relative(offsetDirection.getClockWise(), 2).above(i);
-            world.setBlock(secondaryFingerPos, Blocks.BONE_BLOCK.defaultBlockState(), 2);
+            world.setBlock(secondaryFingerPos, UberBlocks.MARROW.defaultBlockState(), 2);
             if (i == 3) {
                 world.setBlock(blockPos.relative(offsetDirection.getOpposite(), 2).relative(offsetDirection.getClockWise(), 2).above(3), bone, 2);
             }
@@ -145,7 +144,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
     private void generateMiddleFinger(WorldGenLevel world, BlockPos blockPos, Direction offsetDirection, BlockState bone) {
         for (int i = 1; i <= 4; i++) {
             BlockPos fingerPos = blockPos.relative(offsetDirection.getOpposite(), 3).above(i);
-            world.setBlock(fingerPos, Blocks.BONE_BLOCK.defaultBlockState(), 2);
+            world.setBlock(fingerPos, UberBlocks.MARROW.defaultBlockState(), 2);
             if (i == 4) {
                 world.setBlock(blockPos.relative(offsetDirection.getOpposite(), 2).above(4), bone, 2);
             }
@@ -154,7 +153,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     private void generateThumb(WorldGenLevel world, BlockPos blockPos, Direction offsetDirection) {
         for (int index = 0; index < 3; index++) {
-            world.setBlock(blockPos.relative(offsetDirection).relative(offsetDirection.getCounterClockWise(), 2).above(index), Blocks.BONE_BLOCK.defaultBlockState(), 2);
+            world.setBlock(blockPos.relative(offsetDirection).relative(offsetDirection.getCounterClockWise(), 2).above(index), UberBlocks.MARROW.defaultBlockState(), 2);
         }
     }
 

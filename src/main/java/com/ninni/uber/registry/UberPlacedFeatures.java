@@ -13,13 +13,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.BiomeFilter;
-import net.minecraft.world.level.levelgen.placement.CountPlacement;
-import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
-import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.*;
 
 public class UberPlacedFeatures {
 
@@ -43,7 +37,7 @@ public class UberPlacedFeatures {
         PlacementUtils.register(bootstapContext, LAKE_MANA, holder2, CountPlacement.of(3), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, ELYSIAFUZZ_SURFACE, holder3, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_SURFACE, holder4, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-        PlacementUtils.register(bootstapContext, MARROW_TREE, holder5, RarityFilter.onAverageOnceEvery(3), CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, MARROW_TREE, holder5, CountOnEveryLayerPlacement.of(8), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
     }
 
     public static ResourceKey<PlacedFeature> createKey(String string) {
