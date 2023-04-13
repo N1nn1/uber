@@ -24,7 +24,21 @@
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "features": [],
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "uber:elysiafuzz_surface",
+      "uber:mellow_elysiafuzz_surface"
+    ]
+  ],
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {

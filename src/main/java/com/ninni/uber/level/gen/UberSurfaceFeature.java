@@ -1,9 +1,10 @@
 package com.ninni.uber.level.gen;
 
 import com.mojang.serialization.Codec;
-import com.ninni.uber.registry.UberBlocks;
+import com.ninni.uber.level.gen.config.UberSurfaceConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,22 +12,21 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
 
-public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration> {
+public class UberSurfaceFeature extends Feature<UberSurfaceConfig> {
 
-    public GrymmothSurfaceFeature(Codec<VegetationPatchConfiguration> codec) {
+    public UberSurfaceFeature(Codec<UberSurfaceConfig> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<VegetationPatchConfiguration> featurePlaceContext) {
+    public boolean place(FeaturePlaceContext<UberSurfaceConfig> featurePlaceContext) {
         WorldGenLevel worldGenLevel = featurePlaceContext.level();
-        VegetationPatchConfiguration vegetationPatchConfiguration = featurePlaceContext.config();
+        UberSurfaceConfig vegetationPatchConfiguration = featurePlaceContext.config();
         RandomSource randomSource = featurePlaceContext.random();
         BlockPos blockPos = featurePlaceContext.origin();
         Predicate<BlockState> predicate = blockState -> blockState.is(vegetationPatchConfiguration.replaceable);
@@ -37,12 +37,12 @@ public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration
         return !set.isEmpty();
     }
 
-    protected Set<BlockPos> placeGroundPatch(WorldGenLevel worldGenLevel, VegetationPatchConfiguration vegetationPatchConfiguration, RandomSource randomSource, BlockPos blockPos, Predicate<BlockState> predicate, int i, int j) {
+    protected Set<BlockPos> placeGroundPatch(WorldGenLevel worldGenLevel, UberSurfaceConfig vegetationPatchConfiguration, RandomSource randomSource, BlockPos blockPos, Predicate<BlockState> predicate, int i, int j) {
         BlockPos.MutableBlockPos mutableBlockPos = blockPos.mutable();
         BlockPos.MutableBlockPos mutableBlockPos2 = mutableBlockPos.mutable();
         Direction direction = vegetationPatchConfiguration.surface.getDirection();
         Direction direction2 = direction.getOpposite();
-        HashSet<BlockPos> set = new HashSet<BlockPos>();
+        HashSet<BlockPos> set = new HashSet<>();
         for (int k = -i; k <= i; ++k) {
             boolean bl = k == -i || k == i;
             for (int l = -j; l <= j; ++l) {
@@ -52,7 +52,11 @@ public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration
                 boolean bl3 = bl || bl2;
                 boolean bl4 = bl && bl2;
                 boolean bl6 = bl5 = bl3 && !bl4;
-                if (bl4 || bl5 && (vegetationPatchConfiguration.extraEdgeColumnChance == 0.0f || randomSource.nextFloat() > vegetationPatchConfiguration.extraEdgeColumnChance)) continue;
+//                if (bl4 || bl5 && (randomSource.nextFloat() > 0.5F)) continue;
+                int size = i * j;
+                if (k * k + l * l > Mth.nextInt(randomSource, size / 2, size)) {
+                    continue;
+                }
                 mutableBlockPos.setWithOffset(blockPos, k, 0, l);
                 for (m = 0; worldGenLevel.isStateAtPosition(mutableBlockPos, BlockBehaviour.BlockStateBase::isAir) && m < vegetationPatchConfiguration.verticalRange; ++m) {
                     mutableBlockPos.move(direction);
@@ -73,18 +77,18 @@ public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration
         return set;
     }
 
-    protected void distributeVegetation(FeaturePlaceContext<VegetationPatchConfiguration> featurePlaceContext, WorldGenLevel worldGenLevel, VegetationPatchConfiguration vegetationPatchConfiguration, RandomSource randomSource, Set<BlockPos> set, int i, int j) {
+    protected void distributeVegetation(FeaturePlaceContext<UberSurfaceConfig> featurePlaceContext, WorldGenLevel worldGenLevel, UberSurfaceConfig vegetationPatchConfiguration, RandomSource randomSource, Set<BlockPos> set, int i, int j) {
         for (BlockPos blockPos : set) {
             if (randomSource.nextFloat() > vegetationPatchConfiguration.vegetationChance) continue;
             this.placeVegetation(worldGenLevel, vegetationPatchConfiguration, featurePlaceContext.chunkGenerator(), randomSource, blockPos);
         }
     }
 
-    protected boolean placeVegetation(WorldGenLevel worldGenLevel, VegetationPatchConfiguration vegetationPatchConfiguration, ChunkGenerator chunkGenerator, RandomSource randomSource, BlockPos blockPos) {
+    protected boolean placeVegetation(WorldGenLevel worldGenLevel, UberSurfaceConfig vegetationPatchConfiguration, ChunkGenerator chunkGenerator, RandomSource randomSource, BlockPos blockPos) {
         return vegetationPatchConfiguration.vegetationFeature.value().place(worldGenLevel, chunkGenerator, randomSource, blockPos.relative(vegetationPatchConfiguration.surface.getDirection().getOpposite()));
     }
 
-    protected boolean placeGround(WorldGenLevel worldGenLevel, VegetationPatchConfiguration vegetationPatchConfiguration, Predicate<BlockState> predicate, RandomSource randomSource, BlockPos.MutableBlockPos mutableBlockPos, int i) {
+    protected boolean placeGround(WorldGenLevel worldGenLevel, UberSurfaceConfig vegetationPatchConfiguration, Predicate<BlockState> predicate, RandomSource randomSource, BlockPos.MutableBlockPos mutableBlockPos, int i) {
         for (int j = 0; j < i; ++j) {
             BlockState blockState = vegetationPatchConfiguration.groundState.getState(randomSource, mutableBlockPos);
             BlockState blockState2;
@@ -93,9 +97,13 @@ public class GrymmothSurfaceFeature extends Feature<VegetationPatchConfiguration
                 return j != 0;
             }
             worldGenLevel.setBlock(mutableBlockPos, blockState, 2);
-            for (int k = 1; k < 3; k++) {
-                if (!predicate.test(worldGenLevel.getBlockState(mutableBlockPos.below(k)))) continue;
-                worldGenLevel.setBlock(mutableBlockPos.below(k), UberBlocks.MEDULESOIL.defaultBlockState(), 2);
+            if (vegetationPatchConfiguration.placeSoil) {
+                for (int k = 1; k < 3; k++) {
+                    BlockPos mut = mutableBlockPos.below(k);
+                    BlockState soilState = vegetationPatchConfiguration.soilState.getState(randomSource, mut);
+                    if (!predicate.test(worldGenLevel.getBlockState(mut))) continue;
+                    worldGenLevel.setBlock(mut, soilState, 2);
+                }
             }
             mutableBlockPos.move(vegetationPatchConfiguration.surface.getDirection());
         }

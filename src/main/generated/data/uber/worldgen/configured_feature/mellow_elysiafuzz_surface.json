@@ -7,21 +7,21 @@
     "ground_state": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "uber:phasmofuzz"
+        "Name": "uber:mellow_elysiafuzz"
       }
     },
     "place_soil": true,
-    "replaceable": "#uber:phasmofuzz_replaces",
+    "replaceable": "#uber:mellow_elysiafuzz_replaces",
     "soil_state": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "uber:medulesoil"
+        "Name": "uber:mellorock"
       }
     },
     "surface": "floor",
     "vegetation_chance": 0.05,
     "vegetation_feature": {
-      "feature": "uber:phasmofuzz_vegetation",
+      "feature": "uber:elysiafuzz_vegetation",
       "placement": []
     },
     "vertical_range": 5,

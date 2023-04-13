@@ -23,6 +23,9 @@ public class UberConfiguredFeatureProvider extends FabricDynamicRegistryProvider
         add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_SURFACE);
         add(registries, entries, UberConfiguredFeatures.ORE_MEDULESOIL);
         add(registries, entries, UberConfiguredFeatures.LAKE_MANA);
+        add(registries, entries, UberConfiguredFeatures.ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberConfiguredFeatures.ELYSIAFUZZ_VEGETATION);
     }
 
     private void add(HolderLookup.Provider registries, Entries entries, ResourceKey<ConfiguredFeature<?, ?>> configuredFeature) {

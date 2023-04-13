@@ -1,5 +1,8 @@
-// 1.19.4	2023-04-13T01:01:05.8159176	Uber/worldgen/configured_feature
-0bf5e99e2d973daca1a689b88e084e1cdb1bfdda data\uber\worldgen\configured_feature\phasmofuzz_vegetation.json
+// 1.19.4	2023-04-13T08:34:27.7866724	Uber/worldgen/configured_feature
+88c2ab3edac346ab61c357115a93b3436b208eca data\uber\worldgen\configured_feature\phasmofuzz_surface.json
 b565911b86e96ffce35d388f573e7a1c08ba8678 data\uber\worldgen\configured_feature\medulesoil_patch.json
-6ca00616f536bbd36da0a6b743f5557ed66b0e8b data\uber\worldgen\configured_feature\lake_mana.json
-752ac760b674e799521cbbb4d506694197f47a48 data\uber\worldgen\configured_feature\phasmofuzz_surface.json
+67d96d4bfe0988c8364140dcd42f621a94de63ef data\uber\worldgen\configured_feature\elysiafuzz_vegetation.json
+88b7c6ae2af0f417be3db988c307cf48a9e66ead data\uber\worldgen\configured_feature\lake_mana.json
+0bf5e99e2d973daca1a689b88e084e1cdb1bfdda data\uber\worldgen\configured_feature\phasmofuzz_vegetation.json
+62763c132b8ad2a62a11f08fbe8f5c93adf40678 data\uber\worldgen\configured_feature\mellow_elysiafuzz_surface.json
+861feb424d48ee08eef349767b2f4c28e79af1ba data\uber\worldgen\configured_feature\elysiafuzz_surface.json
