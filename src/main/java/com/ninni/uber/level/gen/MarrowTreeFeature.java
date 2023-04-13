@@ -56,7 +56,7 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     private boolean canGenerate(WorldGenLevel world, BlockPos blockPos) {
-        int range = 3;
+        int range = 4;
         boolean flag = false;
         for (int x = -range; x <= range; x++) {
             for (int z = -range; z <= range; z++) {
@@ -81,11 +81,10 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
         if (random.nextFloat() < 0.4F) {
             finalPos = blockPos.below();
             axis = Direction.Axis.Y;
-        } else if (tries == 0) {
-            finalPos = blockPos;
         } else {
-            finalPos = blockPos.relative(direction);
+            finalPos = tries == 0 ? blockPos : blockPos.relative(direction);
         }
+        boolean flag = this.canGenerate(world, finalPos);
         if (tries < maxTries && world.getBlockState(finalPos).getMaterial().isReplaceable()) {
             world.setBlock(finalPos, block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, axis), 2);
             tries++;
