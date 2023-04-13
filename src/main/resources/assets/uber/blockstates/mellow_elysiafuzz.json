@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "uber:block/mellow_elysiafuzz"
+      },
+      {
+        "model": "uber:block/mellow_elysiafuzz",
+        "y": 90
+      },
+      {
+        "model": "uber:block/mellow_elysiafuzz",
+        "y": 180
+      },
+      {
+        "model": "uber:block/mellow_elysiafuzz",
+        "y": 270
+      }
+    ]
+  }
+}

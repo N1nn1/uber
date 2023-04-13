@@ -23,6 +23,7 @@ public class UberBlocks {
     public static final Block MELLOROCK = register("mellorock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block ELYSIAFUZZ = register("elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 
 
     private static Block register(String id, Block block) {

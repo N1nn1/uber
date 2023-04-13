@@ -21,6 +21,7 @@ public class UberCreativeModeTab {
             output.accept(MELLOROCK);
             output.accept(CROWNSTONE);
             output.accept(ELYSIAFUZZ);
+            output.accept(MELLOW_ELYSIAFUZZ);
         }).build();
 
     }
