@@ -3,6 +3,7 @@ package com.ninni.uber;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -17,6 +18,10 @@ public interface UberTags {
     TagKey<Block> MELLOW_ELYSIAFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "mellow_elysiafuzz_replaces")) ;
     TagKey<Block> BASE_BLOCKS_GRYMMOTH = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "base_blocks_grymmoth")) ;
     TagKey<Block> INFINIBURN_UBER = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "infiniburn_uber")) ;
+
+    //biome tags
+    TagKey<Biome> GRYMMOTH = TagKey.create(Registries.BIOME, new ResourceLocation(MOD_ID, "grymmoth"));
+    TagKey<Biome> ECSTACE = TagKey.create(Registries.BIOME, new ResourceLocation(MOD_ID, "ecstace"));
 
     //fluid tags
     TagKey<Fluid> MANA = TagKey.create(Registries.FLUID, new ResourceLocation(MOD_ID, "mana"));
