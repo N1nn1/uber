@@ -28,27 +28,24 @@ public class LiquidBlockMixin {
     @SuppressWarnings("deprecation")
     @Inject(at = @At("TAIL"), method = "shouldSpreadLiquid", cancellable = true)
     private void shouldSpreadToMana(Level level, BlockPos blockPos, BlockState blockState, CallbackInfoReturnable<Boolean> cir) {
-        if (this.fluid.is(UberTags.MANA)) {
-            boolean bl = level.getBlockState(blockPos.below()).is(UberBlocks.MEDULESOIL);
-            for (Direction direction : POSSIBLE_FLOW_DIRECTIONS) {
-                BlockPos blockPos2 = blockPos.relative(direction.getOpposite());
-
-                if (level.getFluidState(blockPos2).is(FluidTags.WATER)) {
-                    Block block = level.getFluidState(blockPos).isSource() ? Blocks.OBSIDIAN : UberBlocks.CROWNSTONE;
-                    level.setBlockAndUpdate(blockPos, block.defaultBlockState());
-                    cir.setReturnValue(false);
-                }
-                if (level.getFluidState(blockPos2).is(FluidTags.LAVA)) {
-                    Block block = level.getFluidState(blockPos).isSource() ? Blocks.OBSIDIAN : UberBlocks.DREADSTONE;
-                    level.setBlockAndUpdate(blockPos, block.defaultBlockState());
-                    cir.setReturnValue(false);
-                }
-
-                if (!bl || !level.getBlockState(blockPos2).is(Blocks.BLUE_ICE)) continue;
-                level.setBlockAndUpdate(blockPos, UberBlocks.MELLOROCK.defaultBlockState());
-                cir.setReturnValue(false);
-            }
-
-        }
+        //if (this.fluid.is(UberTags.MANA)) {
+        //    for (Direction direction : POSSIBLE_FLOW_DIRECTIONS) {
+        //        BlockPos blockPos2 = blockPos.relative(direction.getOpposite());
+//
+        //        if (level.getFluidState(blockPos2).is(FluidTags.WATER)) {
+        //            Block block = level.getFluidState(blockPos).isSource() ? Blocks.OBSIDIAN : UberBlocks.CROWNSTONE;
+        //            level.setBlockAndUpdate(blockPos, block.defaultBlockState());
+        //            cir.setReturnValue(false);
+        //        }
+        //        if (level.getFluidState(blockPos2).is(FluidTags.LAVA)) {
+        //            Block block = level.getFluidState(blockPos).isSource() ? Blocks.OBSIDIAN : UberBlocks.DREADSTONE;
+        //            level.setBlockAndUpdate(blockPos, block.defaultBlockState());
+        //            cir.setReturnValue(false);
+        //        }
+//
+        //        cir.setReturnValue(false);
+        //    }
+//
+        //}
     }
 }

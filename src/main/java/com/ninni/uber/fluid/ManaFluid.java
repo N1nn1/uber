@@ -11,6 +11,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.*;
@@ -24,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-@SuppressWarnings("NullableProblems")
+@SuppressWarnings("NullableProblems, deprecation")
 public class ManaFluid extends FlowingFluid {
     public ManaFluid() {
     }
@@ -43,8 +44,6 @@ public class ManaFluid extends FlowingFluid {
 
     public void animateTick(Level level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
     }
-
-
 
     @Override
     protected boolean canConvertToSource(Level level) {
@@ -69,6 +68,20 @@ public class ManaFluid extends FlowingFluid {
     }
 
     @Override
+    protected void spreadTo(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, Direction direction, FluidState fluidState) {
+        if (direction == Direction.DOWN) {
+            FluidState fluidState2 = levelAccessor.getFluidState(blockPos);
+            if (this.is(UberTags.MANA) && (fluidState2.is(FluidTags.WATER) || fluidState2.is(FluidTags.LAVA))) {
+                if (blockState.getBlock() instanceof LiquidBlock) {
+                    levelAccessor.setBlock(blockPos, UberBlocks.MELLOROCK.defaultBlockState(), 3);
+                }
+                return;
+            }
+        }
+        super.spreadTo(levelAccessor, blockPos, blockState, direction, fluidState);
+    }
+
+    @Override
     public boolean isSource(FluidState fluidState) {
         return false;
     }
@@ -90,7 +103,6 @@ public class ManaFluid extends FlowingFluid {
         return 5;
     }
 
-    @SuppressWarnings("deprecation")
     public boolean canBeReplacedWith(FluidState fluidState, BlockGetter blockGetter, BlockPos blockPos, Fluid fluid, Direction direction) {
         return direction == Direction.DOWN && !fluid.is(UberTags.MANA);
     }
