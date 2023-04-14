@@ -4,8 +4,9 @@
   "package": "com.ninni.uber.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EntityMixin",
     "FogTypeMixin",
-    "EntityMixin"
+    "LiquidBlockMixin"
   ],
   "client": [
     "client.CameraMixin",

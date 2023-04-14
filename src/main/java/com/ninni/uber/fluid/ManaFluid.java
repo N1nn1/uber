@@ -90,6 +90,7 @@ public class ManaFluid extends FlowingFluid {
         return 5;
     }
 
+    @SuppressWarnings("deprecation")
     public boolean canBeReplacedWith(FluidState fluidState, BlockGetter blockGetter, BlockPos blockPos, Fluid fluid, Direction direction) {
         return direction == Direction.DOWN && !fluid.is(UberTags.MANA);
     }
