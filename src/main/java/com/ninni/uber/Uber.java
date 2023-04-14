@@ -18,6 +18,7 @@ public class Uber implements ModInitializer {
 				UberFluids.class,
 				UberGameRules.class,
 				UberSoundEvents.class,
+				UberParticleTypes.class,
 				UberCreativeModeTab.class
 		);
 	}
