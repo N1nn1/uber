@@ -10,6 +10,7 @@
   ],
   "client": [
     "client.CameraMixin",
+    "client.ClientLevelMixin",
     "client.DimensionSpecialEffectsMixin",
     "client.FogRendererMixin",
     "client.LevelRendererMixin",
