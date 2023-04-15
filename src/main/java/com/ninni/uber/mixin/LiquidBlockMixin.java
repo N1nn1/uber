@@ -28,6 +28,7 @@ public class LiquidBlockMixin {
     @SuppressWarnings("deprecation")
     @Inject(at = @At("TAIL"), method = "shouldSpreadLiquid", cancellable = true)
     private void shouldSpreadToMana(Level level, BlockPos blockPos, BlockState blockState, CallbackInfoReturnable<Boolean> cir) {
+        //TODO fix
         //if (this.fluid.is(UberTags.MANA)) {
         //    for (Direction direction : POSSIBLE_FLOW_DIRECTIONS) {
         //        BlockPos blockPos2 = blockPos.relative(direction.getOpposite());

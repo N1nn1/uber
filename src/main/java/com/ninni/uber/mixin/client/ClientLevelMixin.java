@@ -29,9 +29,9 @@ public abstract class ClientLevelMixin {
         BlockState blockState = $this.getBlockState(mutableBlockPos);
 
         if (!blockState.isCollisionShapeFullBlock($this, mutableBlockPos) && $this.getBiome(mutableBlockPos).is(UberTags.ECSTACE)) {
-            if (randomSource.nextFloat() <= 0.000045f) this.addParticle(UberParticleTypes.CALM_WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
-            if (randomSource.nextFloat() <= 0.000035f) this.addParticle(UberParticleTypes.WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
-            if (randomSource.nextFloat() <= 0.000025f) this.addParticle(UberParticleTypes.BLOWING_WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
+            if (randomSource.nextFloat() <= 0.00006f) this.addParticle(UberParticleTypes.CALM_WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
+            if (randomSource.nextFloat() <= 0.00005f) this.addParticle(UberParticleTypes.WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
+            if (randomSource.nextFloat() <= 0.00004f) this.addParticle(UberParticleTypes.BLOWING_WIND, (double)mutableBlockPos.getX() + $this.random.nextDouble(), (double)mutableBlockPos.getY() + $this.random.nextDouble(), (double)mutableBlockPos.getZ() + $this.random.nextDouble(), 0, 0, 0);
         }
     }
 }

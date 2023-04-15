@@ -18,6 +18,7 @@ public class FogRendererMixin {
 
     @Inject(at = @At("HEAD"), method = "setupColor")
     private static void manaFogColor(Camera camera, float f, ClientLevel clientLevel, int i, float g, CallbackInfo ci) {
+        //TODO fix
         //FogType fogType = camera.getFluidInCamera();
         //if (fogType == UberFogTypes.MANA.get()) {
         //    fogRed = 0.0f;

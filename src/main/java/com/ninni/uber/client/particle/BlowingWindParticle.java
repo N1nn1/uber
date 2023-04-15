@@ -16,7 +16,7 @@ public class BlowingWindParticle extends SimpleAnimatedParticle {
         this.sprites = spriteSet;
         this.quadSize = 0.5f;
         this.lifetime = 15;
-        alpha = 0.4F;
+        alpha = 0.25F;
         this.setSpriteFromAge(spriteSet);
     }
 
@@ -28,7 +28,7 @@ public class BlowingWindParticle extends SimpleAnimatedParticle {
     @Override
     public void tick() {
         super.tick();
-        alpha = 0.4F;
+        alpha = 0.25F;
         this.setSpriteFromAge(sprites);
     }
 

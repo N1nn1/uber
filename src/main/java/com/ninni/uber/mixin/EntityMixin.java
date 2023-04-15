@@ -23,6 +23,7 @@ public abstract class EntityMixin {
     @Shadow public abstract Vec3 getDeltaMovement();
     @Shadow public abstract BlockState getFeetBlockState();
     @Shadow public abstract void resetFallDistance();
+    @Shadow public abstract boolean isVehicle();
 
     @Inject(at = @At("HEAD"), method = "baseTick")
     private void addManaEffects(CallbackInfo ci) {
@@ -34,12 +35,15 @@ public abstract class EntityMixin {
                 Iterable<ItemStack> iterable = player.getArmorSlots();
                 for (ItemStack itemStack : iterable) {
                     Item item = itemStack.getItem();
+
+                    //TODO replace gold with anchorzine
                     if (item instanceof ArmorItem armorItem && armorItem.getMaterial() == ArmorMaterials.GOLD) {
                         this.setDeltaMovement(this.getDeltaMovement().multiply(0.8f, 0.8f, 0.8f));
                         this.setDeltaMovement(this.getDeltaMovement().add(0, -0.2f, 0));
                     }
                 }
             }
+            if (this.isVehicle()) this.setDeltaMovement(this.getDeltaMovement().multiply(0, 0, 0));
             this.setDeltaMovement(this.getDeltaMovement().add(0.0f, 0.2f, 0.0f));
             this.resetFallDistance();
         }
