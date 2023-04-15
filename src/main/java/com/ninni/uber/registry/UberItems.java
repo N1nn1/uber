@@ -1,5 +1,6 @@
 package com.ninni.uber.registry;
 
+import com.ninni.uber.*;
 import com.ninni.uber.Uber;
 import com.ninni.uber.registry.secondary.UberFluids;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -7,7 +8,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 
@@ -21,7 +21,7 @@ public class UberItems {
     public static final Item TALL_ISTALKS = register("tall_istalks", new DoubleHighBlockItem(UberBlocks.TALL_ISTALKS, new FabricItemSettings()));
     public static final Item MARROW = register("marrow", new BlockItem(UberBlocks.MARROW, new FabricItemSettings()));
     public static final Item MARROW_PLANKS = register("marrow_planks", new BlockItem(UberBlocks.MARROW_PLANKS, new FabricItemSettings()));
-    public static final Item MANA_BUCKET = register("mana_bucket", new BucketItem(UberFluids.MANA, new FabricItemSettings().maxCount(1)));
+    public static final Item MANA_BUCKET = register("mana_bucket", new ManaBucketItem(UberFluids.MANA, new FabricItemSettings().maxCount(1)));
 
     public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));
     public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
