@@ -1,7 +1,7 @@
 package com.ninni.uber.registry;
 
-import com.ninni.uber.*;
 import com.ninni.uber.Uber;
+import com.ninni.uber.item.*;
 import com.ninni.uber.registry.secondary.UberFluids;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.core.Registry;

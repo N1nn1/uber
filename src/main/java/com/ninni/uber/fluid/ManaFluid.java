@@ -2,6 +2,7 @@ package com.ninni.uber.fluid;
 
 import com.ninni.uber.UberTags;
 import com.ninni.uber.registry.UberBlocks;
+import com.ninni.uber.registry.UberParticleTypes;
 import com.ninni.uber.registry.secondary.UberFluids;
 import com.ninni.uber.registry.secondary.UberGameRules;
 import com.ninni.uber.registry.UberItems;
@@ -11,6 +12,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
@@ -43,6 +45,19 @@ public class ManaFluid extends FlowingFluid {
     }
 
     public void animateTick(Level level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
+        BlockPos blockPos2 = blockPos.above();
+        if (level.getBlockState(blockPos2).isAir() && !level.getBlockState(blockPos2).isSolidRender(level, blockPos2)) {
+            if (randomSource.nextInt(20) == 0) {
+                double d = (double)blockPos.getX() + randomSource.nextDouble();
+                double e = (double)blockPos.getY() + 1.0;
+                double f = (double)blockPos.getZ() + randomSource.nextDouble();
+                level.addParticle(UberParticleTypes.MANA, d, e, f, 0.0, 0.0, 0.0);
+            }
+            //TODO custom sounds
+            //if (randomSource.nextInt(200) == 0) {
+            //    level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.LAVA_AMBIENT, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
+            //}
+        }
     }
 
     @Override

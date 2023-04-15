@@ -12,4 +12,5 @@ public class UberParticleTypes {
     public static final SimpleParticleType BLOWING_WIND = Registry.register(BuiltInRegistries.PARTICLE_TYPE, new ResourceLocation(Uber.MOD_ID, "blowing_wind"), FabricParticleTypes.simple());
     public static final SimpleParticleType WIND = Registry.register(BuiltInRegistries.PARTICLE_TYPE, new ResourceLocation(Uber.MOD_ID, "wind"), FabricParticleTypes.simple());
     public static final SimpleParticleType CALM_WIND = Registry.register(BuiltInRegistries.PARTICLE_TYPE, new ResourceLocation(Uber.MOD_ID, "calm_wind"), FabricParticleTypes.simple());
+    public static final SimpleParticleType MANA = Registry.register(BuiltInRegistries.PARTICLE_TYPE, new ResourceLocation(Uber.MOD_ID, "mana"), FabricParticleTypes.simple());
 }

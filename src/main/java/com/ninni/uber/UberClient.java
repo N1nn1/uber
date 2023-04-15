@@ -2,6 +2,7 @@ package com.ninni.uber;
 
 import com.ninni.uber.client.particle.BlowingWindParticle;
 import com.ninni.uber.client.particle.CalmWindParticle;
+import com.ninni.uber.client.particle.ManaParticle;
 import com.ninni.uber.client.particle.WindParticle;
 import com.ninni.uber.registry.UberBlocks;
 import com.ninni.uber.registry.UberParticleTypes;
@@ -13,6 +14,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
@@ -40,5 +42,6 @@ public class UberClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.BLOWING_WIND, BlowingWindParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.WIND, WindParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.CALM_WIND, CalmWindParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(UberParticleTypes.MANA, ManaParticle.Factory::new);
     }
 }
