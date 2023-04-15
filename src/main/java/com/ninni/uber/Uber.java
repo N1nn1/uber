@@ -3,6 +3,7 @@ package com.ninni.uber;
 import com.google.common.reflect.Reflection;
 import com.ninni.uber.registry.*;
 import com.ninni.uber.registry.secondary.UberFluids;
+import com.ninni.uber.registry.secondary.UberFogTypes;
 import com.ninni.uber.registry.secondary.UberGameRules;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,6 +14,7 @@ public class Uber implements ModInitializer {
 	public void onInitialize() {
 		Reflection.initialize(
 				UberFeatures.class,
+				UberFogTypes.class,
 				UberItems.class,
 				UberBlocks.class,
 				UberFluids.class,
