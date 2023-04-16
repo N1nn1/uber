@@ -72,7 +72,7 @@ public class ManaFluid extends FlowingFluid {
     }
     @Nullable
     public ParticleOptions getDripParticle() {
-        return ParticleTypes.DRIPPING_WATER;
+        return null;
     }
 
     public int getSlopeFindDistance(LevelReader levelReader) {
