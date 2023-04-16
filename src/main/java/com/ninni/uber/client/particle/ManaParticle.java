@@ -11,10 +11,10 @@ public class ManaParticle extends SimpleAnimatedParticle {
     private final SpriteSet sprites;
 
 
-    ManaParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
+    ManaParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet, float scale) {
         super(level, x, y, z, spriteSet,0);
         this.sprites = spriteSet;
-        this.quadSize = 0.25f;
+        this.quadSize = scale;
         this.lifetime = level.random.nextInt(15, 30);
         this.setSpriteFromAge(spriteSet);
     }
@@ -38,11 +38,18 @@ public class ManaParticle extends SimpleAnimatedParticle {
     }
 
     @Environment(value = EnvType.CLIENT)
-    public record Factory(SpriteSet spriteSet) implements ParticleProvider<SimpleParticleType> {
-
+    public record NormalFactory(SpriteSet spriteSet) implements ParticleProvider<SimpleParticleType> {
         @Override
         public Particle createParticle(SimpleParticleType defaultParticleType, ClientLevel level, double d, double e, double f, double g, double h, double i) {
-            return new ManaParticle(level, d, e, f, this.spriteSet);
+            return new ManaParticle(level, d, e, f, this.spriteSet, 0.25f);
+        }
+    }
+
+    @Environment(value = EnvType.CLIENT)
+    public record CauldronFactory(SpriteSet spriteSet) implements ParticleProvider<SimpleParticleType> {
+        @Override
+        public Particle createParticle(SimpleParticleType defaultParticleType, ClientLevel level, double d, double e, double f, double g, double h, double i) {
+            return new ManaParticle(level, d, e, f, this.spriteSet, 0.15f);
         }
     }
 }

@@ -42,7 +42,7 @@ public abstract class LiquidBlockMixin {
                     cir.setReturnValue(false);
                 }
                 if (level.getFluidState(blockPos2).is(UberTags.MANA)) {
-                    Block block = level.getFluidState(blockPos).isSource() ? UberBlocks.CROWNSTONE : UberBlocks.DREADSTONE;
+                    Block block = level.getFluidState(blockPos).isSource() ? UberBlocks.DREADSTONE : Blocks.DEEPSLATE;
                     level.setBlockAndUpdate(blockPos, block.defaultBlockState());
                     this.fizz(level, blockPos);
                     cir.setReturnValue(false);

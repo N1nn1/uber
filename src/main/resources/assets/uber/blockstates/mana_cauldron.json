@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "level=1": {
+      "model": "uber:block/mana_cauldron1"
+    },
+    "level=2": {
+      "model": "uber:block/mana_cauldron2"
+    },
+    "level=3": {
+      "model": "uber:block/mana_cauldron3"
+    }
+  }
+}

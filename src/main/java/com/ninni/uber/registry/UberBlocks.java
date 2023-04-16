@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
+@SuppressWarnings("unused")
 public class UberBlocks {
 
     public static final Block DREADSTONE = register("dreadstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
@@ -22,6 +23,7 @@ public class UberBlocks {
     public static final Block MARROW = register("marrow", new RotatedPillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
     public static final Block MARROW_PLANKS = register("marrow_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block MANA = register("mana", new LiquidBlock(UberFluids.MANA, FabricBlockSettings.of(Material.WATER).color(MaterialColor.COLOR_LIGHT_GREEN).noCollission().strength(100.0F).lightLevel(blockState -> 15).noLootTable()));
+    public static final Block MANA_CAULDRON = register("mana_cauldron", new ManaCauldronBlock(FabricBlockSettings.copy(Blocks.CAULDRON).lightLevel(ManaCauldronBlock::getLightLevel)));
 
     public static final Block MELLOROCK = register("mellorock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
