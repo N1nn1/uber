@@ -12,9 +12,10 @@ public class ManaParticle extends SimpleAnimatedParticle {
 
 
     ManaParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
-        super(level, x, y, z, spriteSet,-0.25f);
+        super(level, x, y, z, spriteSet,0);
         this.sprites = spriteSet;
-        this.lifetime = 20;
+        this.quadSize = 0.25f;
+        this.lifetime = level.random.nextInt(15, 30);
         this.setSpriteFromAge(spriteSet);
     }
 

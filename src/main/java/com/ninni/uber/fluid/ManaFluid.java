@@ -3,6 +3,7 @@ package com.ninni.uber.fluid;
 import com.ninni.uber.UberTags;
 import com.ninni.uber.registry.UberBlocks;
 import com.ninni.uber.registry.UberParticleTypes;
+import com.ninni.uber.registry.UberSoundEvents;
 import com.ninni.uber.registry.secondary.UberFluids;
 import com.ninni.uber.registry.secondary.UberGameRules;
 import com.ninni.uber.registry.UberItems;
@@ -46,19 +47,20 @@ public class ManaFluid extends FlowingFluid {
 
     public void animateTick(Level level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
         BlockPos blockPos2 = blockPos.above();
-        if (level.getBlockState(blockPos2).isAir() && !level.getBlockState(blockPos2).isSolidRender(level, blockPos2)) {
+        if (level.getBlockState(blockPos2).isAir() && this.isSource(fluidState) && !level.getBlockState(blockPos2).isSolidRender(level, blockPos2)) {
             if (randomSource.nextInt(20) == 0) {
                 double d = (double)blockPos.getX() + randomSource.nextDouble();
-                double e = (double)blockPos.getY() + 1.0;
+                double e = (double)blockPos.getY() + 1.15;
                 double f = (double)blockPos.getZ() + randomSource.nextDouble();
                 level.addParticle(UberParticleTypes.MANA, d, e, f, 0.0, 0.0, 0.0);
+                level.playLocalSound(d, e, f, UberSoundEvents.MANA_POP, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
             }
-            //TODO custom sounds
-            //if (randomSource.nextInt(200) == 0) {
-            //    level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.LAVA_AMBIENT, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
-            //}
+            if (randomSource.nextInt(200) == 0) {
+                level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), UberSoundEvents.MANA_GURGLE, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
+            }
         }
     }
+
 
     @Override
     protected boolean canConvertToSource(Level level) {
@@ -127,7 +129,7 @@ public class ManaFluid extends FlowingFluid {
     }
 
     public Optional<SoundEvent> getPickupSound() {
-        return Optional.of(SoundEvents.BUCKET_FILL);
+        return Optional.of(UberSoundEvents.BUCKET_FILL_MANA);
     }
 
     public static class Flowing extends ManaFluid {

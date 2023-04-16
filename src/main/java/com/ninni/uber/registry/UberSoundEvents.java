@@ -21,6 +21,12 @@ public interface UberSoundEvents {
     Holder.Reference<SoundEvent> AMBIENT_UBER_ELYSIUM_FIELDS_LOOP = registerForHolder("ambient.uber.elysium_fields.loop");
     Holder.Reference<SoundEvent> AMBIENT_UBER_ELYSIUM_FIELDS_ADDITIONS = registerForHolder("ambient.uber.elysium_fields.additions");
 
+    SoundEvent BUCKET_EMPTY_MANA = register("item.bucket.empty_mana");
+    SoundEvent BUCKET_FILL_MANA = register("item.bucket.fill_mana");
+    SoundEvent MANA_DISAPPEAR = register("block.mana.disappear");
+    SoundEvent MANA_ENTER = register("block.mana.enter");
+    SoundEvent MANA_POP = register("block.mana.pop");
+    SoundEvent MANA_GURGLE = register("block.mana.gurgle");
 
     //TODO addition sounds
 
