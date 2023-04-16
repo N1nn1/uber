@@ -33,7 +33,7 @@ public class ManaBucketItem extends BucketItem {
     public boolean emptyContents(@Nullable Player player, Level level, BlockPos blockPos, @Nullable BlockHitResult blockHitResult) {
         if (this.content.is(UberTags.MANA) && level.dimension() != Uber.UBER) {
             //TODO custom sounds
-            level.playSound(player, blockPos, UberSoundEvents.MANA_DISAPPEAR, SoundSource.BLOCKS, 0.5f, 2.6f + (level.random.nextFloat() - level.random.nextFloat()) * 0.8f);
+            level.playSound(player, blockPos, UberSoundEvents.MANA_DISAPPEAR, SoundSource.BLOCKS, 0.5f, 1);
             for (int l = 0; l < 8; ++l) {
                 if (!level.getBlockState(blockPos.below()).isAir()) level.addParticle(UberParticleTypes.MANA, (double)blockPos.getX() + Math.random(), (double)blockPos.getY() + 0.3f, (double)blockPos.getZ() + Math.random(), 0.0, 0.0, 0.0);
                 level.addParticle(ParticleTypes.CLOUD, (double)blockPos.getX() + Math.random(), (double)blockPos.getY() + Math.random(), (double)blockPos.getZ() + Math.random(), 0.0, 0.0, 0.0);

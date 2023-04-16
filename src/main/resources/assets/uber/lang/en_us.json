@@ -17,6 +17,11 @@
 	"block.uber.elysiafuzz": "Elysiafuzz",
 	"block.uber.mellow_elysiafuzz": "Mellow Elysiafuzz",
 
+	"subtitles.liquid.mana.disappear": "Mana vanishes",
+	"subtitles.liquid.mana.gurgle": "Mana gurgles",
+	"subtitles.liquid.mana.pop": "Mana ascends",
+	"subtitles.liquid.mana.splash": "Mana repels",
+
 
 	"gamerule.manaSourceConversion": "Mana converts to source",
 	"gamerule.manaSourceConversion.description": "When flowing mana is surrounded on two sides by mana sources it converts into a source."

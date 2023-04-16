@@ -70,5 +70,78 @@
         "volume": 0.77
       }
     ]
+  },
+  "item.bucket.empty_mana": {
+    "sounds": [
+      "uber:item/bucket/empty_mana1",
+      "uber:item/bucket/empty_mana2",
+      "uber:item/bucket/empty_mana3"
+    ],
+    "subtitle": "subtitles.item.bucket.empty"
+  },
+  "item.bucket.fill_mana": {
+    "sounds": [
+      "uber:item/bucket/fill_mana1",
+      "uber:item/bucket/fill_mana2",
+      "uber:item/bucket/fill_mana3"
+    ],
+    "subtitle": "subtitles.item.bucket.fill"
+  },
+  "liquid.mana.disappear": {
+    "sounds": [
+      "uber:liquid/mana_disappear1",
+      "uber:liquid/mana_disappear2",
+      "uber:liquid/mana_disappear3"
+    ],
+    "subtitle": "subtitles.liquid.mana.disappear"
+  },
+  "liquid.mana.gurgle": {
+    "sounds": [
+      "uber:liquid/mana_gurgle1",
+      "uber:liquid/mana_gurgle2",
+      "uber:liquid/mana_gurgle3",
+      "uber:liquid/mana_gurgle4"
+    ],
+    "subtitle": "subtitles.liquid.mana.gurgle"
+  },
+  "liquid.mana.gurgle_addition": {
+    "sounds": [
+      "uber:liquid/mana_gurgle_addition1",
+      "uber:liquid/mana_gurgle_addition2",
+      "uber:liquid/mana_gurgle_addition3"
+    ],
+    "subtitle": "subtitles.liquid.mana.gurgle"
+  },
+  "liquid.mana.pop": {
+    "sounds": [
+      "uber:liquid/mana_pop1",
+      "uber:liquid/mana_pop2",
+      "uber:liquid/mana_pop3"
+    ],
+    "subtitle": "subtitles.liquid.mana.pop"
+  },
+  "liquid.mana.enter": {
+    "sounds": [
+      "uber:liquid/mana_enter"
+    ]
+  },
+  "liquid.mana.exit": {
+    "sounds": [
+      "uber:liquid/mana_exit1",
+      "uber:liquid/mana_exit2"
+    ]
+  },
+  "liquid.mana.splash": {
+    "sounds": [
+      "uber:liquid/mana_splash1",
+      "uber:liquid/mana_splash2"
+    ],
+    "subtitle": "subtitles.liquid.mana.splash"
+  },
+  "liquid.mana.splash_heavy": {
+    "sounds": [
+      "uber:liquid/mana_splash_heavy"
+    ],
+    "subtitle": "subtitles.liquid.mana.splash"
   }
 }

@@ -23,10 +23,14 @@ public interface UberSoundEvents {
 
     SoundEvent BUCKET_EMPTY_MANA = register("item.bucket.empty_mana");
     SoundEvent BUCKET_FILL_MANA = register("item.bucket.fill_mana");
-    SoundEvent MANA_DISAPPEAR = register("block.mana.disappear");
-    SoundEvent MANA_ENTER = register("block.mana.enter");
-    SoundEvent MANA_POP = register("block.mana.pop");
-    SoundEvent MANA_GURGLE = register("block.mana.gurgle");
+    SoundEvent MANA_DISAPPEAR = register("liquid.mana.disappear");
+    SoundEvent MANA_ENTER = register("liquid.mana.enter");
+    SoundEvent MANA_EXIT = register("liquid.mana.exit");
+    SoundEvent MANA_SPLASH = register("liquid.mana.splash");
+    SoundEvent MANA_SPLASH_HEAVY = register("liquid.mana.splash_heavy");
+    SoundEvent MANA_GURGLE = register("liquid.mana.gurgle");
+    SoundEvent MANA_GURGLE_ADDITION = register("liquid.mana.gurgle_addition");
+    SoundEvent MANA_POP = register("liquid.mana.pop");
 
     //TODO addition sounds
 

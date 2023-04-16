@@ -12,7 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
@@ -53,10 +52,10 @@ public class ManaFluid extends FlowingFluid {
                 double e = (double)blockPos.getY() + 1.15;
                 double f = (double)blockPos.getZ() + randomSource.nextDouble();
                 level.addParticle(UberParticleTypes.MANA, d, e, f, 0.0, 0.0, 0.0);
-                level.playLocalSound(d, e, f, UberSoundEvents.MANA_POP, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
+                if (randomSource.nextInt(30) == 0) level.playLocalSound(d, e, f, UberSoundEvents.MANA_POP, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
             }
-            if (randomSource.nextInt(200) == 0) {
-                level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), UberSoundEvents.MANA_GURGLE, SoundSource.BLOCKS, 0.2f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
+            if (randomSource.nextInt(300) == 0) {
+                level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), randomSource.nextInt(300) == 0 ? UberSoundEvents.MANA_GURGLE : UberSoundEvents.MANA_GURGLE_ADDITION, SoundSource.BLOCKS, 0.1f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
             }
         }
     }
