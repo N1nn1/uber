@@ -2,10 +2,6 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
-    "additions_sound": {
-      "sound": "uber:ambient.uber.grymmoth.additions",
-      "tick_chance": 0.0111
-    },
     "ambient_sound": "uber:ambient.uber.grymmoth.loop",
     "fog_color": 4080736,
     "mood_sound": {

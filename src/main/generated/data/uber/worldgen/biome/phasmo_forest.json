@@ -2,10 +2,6 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
-    "additions_sound": {
-      "sound": "uber:ambient.uber.phasmo_forest.additions",
-      "tick_chance": 0.0111
-    },
     "ambient_sound": "uber:ambient.uber.phasmo_forest.loop",
     "fog_color": 3036564,
     "mood_sound": {

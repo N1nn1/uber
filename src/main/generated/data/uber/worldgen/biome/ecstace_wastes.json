@@ -2,10 +2,6 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
-    "additions_sound": {
-      "sound": "uber:ambient.uber.ecstace.additions",
-      "tick_chance": 0.0111
-    },
     "ambient_sound": "uber:ambient.uber.ecstace.loop",
     "fog_color": 8025457,
     "mood_sound": {

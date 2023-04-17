@@ -58,6 +58,7 @@ public class ManaFluid extends FlowingFluid {
                 if (randomSource.nextInt(5) == 0) level.playLocalSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), UberSoundEvents.MANA_GURGLE_ADDITION, SoundSource.BLOCKS, 0.3f + randomSource.nextFloat() * 0.2f, 0.9f + randomSource.nextFloat() * 0.15f, false);
             }
         }
+        //TODO undermana loop sound
     }
 
 
