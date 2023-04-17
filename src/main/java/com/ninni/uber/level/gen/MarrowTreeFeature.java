@@ -57,17 +57,15 @@ public class MarrowTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     private boolean canGenerate(WorldGenLevel world, BlockPos blockPos) {
         int range = 4;
-        boolean flag = false;
         for (int x = -range; x <= range; x++) {
             for (int z = -range; z <= range; z++) {
                 BlockPos pos = new BlockPos(blockPos.getX() + x, blockPos.getY(), blockPos.getZ() + z);
                 if (world.isStateAtPosition(pos, DripstoneUtils::isEmptyOrWaterOrLava)) {
-                    break;
+                    return false;
                 }
-                flag = true;
             }
         }
-        return flag;
+        return true;
     }
 
     private boolean placeRoot(WorldGenLevel world, BlockPos blockPos, RandomSource random, Direction direction, int tries) {

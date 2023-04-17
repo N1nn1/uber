@@ -22,9 +22,13 @@ public class UberPlacedFeatureProvider extends FabricDynamicRegistryProvider {
         add(registries, entries, UberPlacedFeatures.PHASMOFUZZ_SURFACE);
         add(registries, entries, UberPlacedFeatures.ORE_MEDULESOIL);
         add(registries, entries, UberPlacedFeatures.LAKE_MANA);
+        add(registries, entries, UberPlacedFeatures.MARROW_TREE);
+        add(registries, entries, UberPlacedFeatures.MARROW_CAGE);
+        add(registries, entries, UberPlacedFeatures.MARROW_RIB);
+        add(registries, entries, UberPlacedFeatures.MARROW_RIB_CIRCLE);
+        add(registries, entries, UberPlacedFeatures.MARROW_DECORATIONS);
         add(registries, entries, UberPlacedFeatures.ELYSIAFUZZ_SURFACE);
         add(registries, entries, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
-        add(registries, entries, UberPlacedFeatures.MARROW_TREE);
     }
 
     private void add(HolderLookup.Provider registries, Entries entries, ResourceKey<PlacedFeature> configuredFeature) {
