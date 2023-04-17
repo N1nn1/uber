@@ -2,6 +2,8 @@ package com.ninni.uber.mixin.client;
 
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.ninni.uber.Uber;
+import com.ninni.uber.UberTags;
 import com.ninni.uber.registry.secondary.UberFogTypes;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -97,6 +99,10 @@ public class FogRendererMixin {
                 fogData.start = -6.0f;
                 fogData.end = f * 0.25f;
             }
+        } else if (entity.getLevel().dimension() == Uber.UBER) {
+            fogData.start = f * 0.05f;
+            fogData.end = f * ((float)entity.getY()* 0.01f);
+            fogData.shape = FogShape.CYLINDER;
         } else if (mobEffectFogFunction != null) {
             LivingEntity livingEntity = (LivingEntity)entity;
             MobEffectInstance mobEffectInstance = livingEntity.getEffect(mobEffectFogFunction.getMobEffect());
