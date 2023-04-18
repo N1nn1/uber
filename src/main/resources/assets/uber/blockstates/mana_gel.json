@@ -1,0 +1,10 @@
+{
+  "variants": {
+	"active=false": {
+      "model": "uber:block/mana_gel"
+    },
+    "active=true": {
+      "model": "uber:block/mana_gel_active"
+    }
+  }
+}

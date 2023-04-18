@@ -56,7 +56,7 @@ public abstract class LiquidBlockMixin {
             for (Direction direction : POSSIBLE_FLOW_DIRECTIONS) {
                 BlockPos blockPos2 = blockPos.relative(direction.getOpposite());
                 if (level.getFluidState(blockPos2).is(FluidTags.WATER)) {
-                    Block block = level.getFluidState(blockPos).isSource() ? Blocks.OBSIDIAN : UberBlocks.CROWNSTONE;
+                    Block block = level.getFluidState(blockPos).isSource() ? UberBlocks.MANA_GEL : UberBlocks.CROWNSTONE;
                     level.setBlockAndUpdate(blockPos, block.defaultBlockState());
                     cir.setReturnValue(false);
                 };

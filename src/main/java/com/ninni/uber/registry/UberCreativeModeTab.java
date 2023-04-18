@@ -19,6 +19,7 @@ public class UberCreativeModeTab {
             output.accept(MARROW);
             output.accept(MARROW_PLANKS);
             output.accept(MANA_BUCKET);
+            output.accept(MANA_GEL);
 
             output.accept(MELLOROCK);
             output.accept(CROWNSTONE);

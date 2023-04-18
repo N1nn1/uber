@@ -22,6 +22,7 @@ public class UberItems {
     public static final Item MARROW = register("marrow", new BlockItem(UberBlocks.MARROW, new FabricItemSettings()));
     public static final Item MARROW_PLANKS = register("marrow_planks", new BlockItem(UberBlocks.MARROW_PLANKS, new FabricItemSettings()));
     public static final Item MANA_BUCKET = register("mana_bucket", new ManaBucketItem(UberFluids.MANA, new FabricItemSettings().maxCount(1)));
+    public static final Item MANA_GEL = register("mana_gel", new BlockItem(UberBlocks.MANA_GEL, new FabricItemSettings()));
 
     public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));
     public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
