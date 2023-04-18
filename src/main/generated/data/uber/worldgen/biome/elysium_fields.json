@@ -32,7 +32,8 @@
     [],
     [
       "uber:elysiafuzz_surface",
-      "uber:mellow_elysiafuzz_surface"
+      "uber:mellow_elysiafuzz_surface",
+      "uber:elysiafuzz_vegetation"
     ]
   ],
   "has_precipitation": false,

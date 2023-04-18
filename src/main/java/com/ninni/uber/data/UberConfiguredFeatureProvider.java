@@ -19,6 +19,7 @@ public class UberConfiguredFeatureProvider extends FabricDynamicRegistryProvider
 
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
+        add(registries, entries, UberConfiguredFeatures.CROWNSTONE_VEGETATION);
         add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_VEGETATION);
         add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_SURFACE);
         add(registries, entries, UberConfiguredFeatures.ORE_MEDULESOIL);
