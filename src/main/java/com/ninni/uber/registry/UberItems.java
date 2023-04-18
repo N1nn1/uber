@@ -27,6 +27,8 @@ public class UberItems {
     public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
     public static final Item ELYSIAFUZZ = register("elysiafuzz", new BlockItem(UberBlocks.ELYSIAFUZZ, new FabricItemSettings()));
     public static final Item MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new BlockItem(UberBlocks.MELLOW_ELYSIAFUZZ, new FabricItemSettings()));
+    public static final Item ELYSIAVELD = register("elysiaveld", new BlockItem(UberBlocks.ELYSIAVELD, new FabricItemSettings()));
+    public static final Item CLOTTONBALL = register("clottonball", new BlockItem(UberBlocks.CLOTTONBALL, new FabricItemSettings()));
 
     private static Item register(String id, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Uber.MOD_ID, id), item);

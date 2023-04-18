@@ -35,7 +35,9 @@ public class UberClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 UberBlocks.PHASMOFOLLICLE,
                 UberBlocks.ISTALKS,
-                UberBlocks.TALL_ISTALKS
+                UberBlocks.TALL_ISTALKS,
+                UberBlocks.ELYSIAVELD,
+                UberBlocks.CLOTTONBALL
         );
 
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.BLOWING_WIND, BlowingWindParticle.Factory::new);

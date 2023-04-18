@@ -2,10 +2,21 @@
   "type": "minecraft:simple_block",
   "config": {
     "to_place": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:air"
-      }
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "uber:elysiaveld"
+          },
+          "weight": 6
+        },
+        {
+          "data": {
+            "Name": "uber:clottonball"
+          },
+          "weight": 1
+        }
+      ]
     }
   }
 }

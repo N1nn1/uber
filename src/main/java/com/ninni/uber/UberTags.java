@@ -12,11 +12,13 @@ import static com.ninni.uber.Uber.MOD_ID;
 public interface UberTags {
     //block tags
     TagKey<Block> MEDULESOIL = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "medulesoil"));
-    TagKey<Block> FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "fuzz"));
+    TagKey<Block> GRYMMOTH_FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "grymmoth_fuzz"));
+    TagKey<Block> ECSTACE_FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "ecstace_fuzz"));
     TagKey<Block> PHASMOFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "phasmofuzz_replaces")) ;
     TagKey<Block> ELYSIAFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "elysiafuzz_replaces")) ;
     TagKey<Block> MELLOW_ELYSIAFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "mellow_elysiafuzz_replaces")) ;
     TagKey<Block> BASE_BLOCKS_GRYMMOTH = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "base_blocks_grymmoth")) ;
+    TagKey<Block> BASE_BLOCKS_ECSTACE = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "base_blocks_ecstace")) ;
     TagKey<Block> INFINIBURN_UBER = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "infiniburn_uber")) ;
 
     //biome tags

@@ -11,14 +11,16 @@ import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class UberVegetalDecoBlock extends TallGrassBlock {
+    public boolean isEcstace;
 
-    public UberVegetalDecoBlock(Properties properties) {
+    public UberVegetalDecoBlock(Properties properties, boolean isEcstace) {
         super(properties);
+        this.isEcstace = isEcstace;
     }
 
     @Override
     protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return blockState.is(UberTags.FUZZ);
+        return this.isEcstace ? blockState.is(UberTags.ECSTACE_FUZZ) : blockState.is(UberTags.GRYMMOTH_FUZZ);
     }
 
     @Override

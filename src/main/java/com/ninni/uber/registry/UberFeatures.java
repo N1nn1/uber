@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class UberFeatures {
 
-    public static final Feature<UberSurfaceConfig> GRYMMOTH_SURFACE = register("grymmoth_surface", new UberSurfaceFeature(UberSurfaceConfig.CODEC));
+    public static final Feature<UberSurfaceConfig> UBER_SURFACE = register("grymmoth_surface", new UberSurfaceFeature(UberSurfaceConfig.CODEC));
     public static final Feature<NoneFeatureConfiguration> SOIL_PATCH = register("soil_patch", new SoilPatchFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_TREE = register("marrow_tree", new MarrowTreeFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_CAGE = register("marrow_cage", new MarrowCageFeature(NoneFeatureConfiguration.CODEC));

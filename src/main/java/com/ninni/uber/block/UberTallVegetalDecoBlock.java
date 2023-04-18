@@ -7,12 +7,14 @@ import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class UberTallVegetalDecoBlock extends DoublePlantBlock {
-    public UberTallVegetalDecoBlock(Properties properties) {
+    public boolean isEcstace;
+    public UberTallVegetalDecoBlock(Properties properties, boolean isEcstace) {
         super(properties);
+        this.isEcstace = isEcstace;
     }
 
     protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return blockState.is(UberTags.FUZZ);
+        return this.isEcstace ? blockState.is(UberTags.ECSTACE_FUZZ) : blockState.is(UberTags.GRYMMOTH_FUZZ);
     }
 }
 
