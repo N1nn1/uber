@@ -6,15 +6,21 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecation")
 public class ManaGelBlock extends Block {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+    protected static final VoxelShape SHAPE = Block.box(1.0, 1.0, 1.0, 15.0, 15.0, 15.0);
 
     public ManaGelBlock(Properties properties) {
         super(properties);
@@ -26,24 +32,24 @@ public class ManaGelBlock extends Block {
         level.setBlock(pos, state.setValue(ACTIVE, false), Block.UPDATE_ALL);
     }
 
-    protected double getJumpHeight(Entity entity) {
-        double height = 1.2;
-        if (entity instanceof LivingEntity mob && mob.isFallFlying()) height += 0.2;
-        return height;
+    @Override
+    public @NotNull VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return SHAPE;
     }
 
     protected Vec3 getJumpVelocity(Entity entity) {
-        Vec3 vel = entity.getDeltaMovement();
-        double x = vel.x();
-        double z = vel.z();
-        x = Mth.clamp(x * 2, -23, 23);
-        z = Mth.clamp(z * 2, -23, 23);
-        return new Vec3(x, getJumpHeight(entity), z);
+        if (!entity.isSuppressingBounce()) {
+            Vec3 vel = entity.getDeltaMovement();
+            double x = vel.x() * 1.3f;
+            double z = vel.z() * 1.3f;
+            return new Vec3(x, 1, z);
+        }
+        return  Vec3.ZERO;
     }
 
     @Override
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        if (!level.isClientSide() && level.getBlockState(pos.above()).isAir()) {
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (level.getBlockState(pos.above()).isAir() && !entity.isSuppressingBounce()) {
             //world.playSound(null, pos, UberSoundEvents.MANA_GEL_BOUNCE, SoundSource.BLOCKS, 1, 1.2F);
             level.setBlock(pos, state.setValue(ACTIVE, true), Block.UPDATE_ALL);
             level.scheduleTick(pos, state.getBlock(), 2);

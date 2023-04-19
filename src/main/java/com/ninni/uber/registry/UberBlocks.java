@@ -32,6 +32,7 @@ public class UberBlocks {
     public static final Block MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block ELYSIAVELD = register("elysiaveld", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), true));
     public static final Block CLOTTONBALL = register("clottonball", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), true));
+    public static final Block CLOTTON_BLOCK = register("clotton_block", new Block(FabricBlockSettings.copyOf(Blocks.LIGHT_GRAY_WOOL)));
 
 
     private static Block register(String id, Block block) {

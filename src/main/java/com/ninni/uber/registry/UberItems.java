@@ -32,6 +32,7 @@ public class UberItems {
     public static final Item MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new BlockItem(UberBlocks.MELLOW_ELYSIAFUZZ, new FabricItemSettings()));
     public static final Item ELYSIAVELD = register("elysiaveld", new BlockItem(UberBlocks.ELYSIAVELD, new FabricItemSettings()));
     public static final Item CLOTTONBALL = register("clottonball", new BlockItem(UberBlocks.CLOTTONBALL, new FabricItemSettings()));
+    public static final Item CLOTTON_BLOCK = register("clotton_block", new BlockItem(UberBlocks.CLOTTON_BLOCK, new FabricItemSettings()));
 
 
     private static Item register(String id, Item item) {

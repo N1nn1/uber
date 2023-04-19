@@ -20,8 +20,9 @@
 	"block.uber.crownstone": "Crownstone",
 	"block.uber.elysiafuzz": "Elysiafuzz",
 	"block.uber.mellow_elysiafuzz": "Mellow Elysiafuzz",
-	"block.uber.clottonball": "Clottonball",
 	"block.uber.elysiaveld": "Elysiaveld",
+	"block.uber.clottonball": "Clottonball",
+	"block.uber.clotton_block": "Clotton Block",
 
 	"subtitles.liquid.mana.disappear": "Mana vanishes",
 	"subtitles.liquid.mana.gurgle": "Mana gurgles",
