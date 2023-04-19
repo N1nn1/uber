@@ -1,10 +1,14 @@
 package com.ninni.uber;
 
+import com.google.common.reflect.Reflection;
+import com.ninni.uber.client.model.entity.UberEntityModelLayers;
 import com.ninni.uber.client.particle.BlowingWindParticle;
 import com.ninni.uber.client.particle.CalmWindParticle;
 import com.ninni.uber.client.particle.ManaParticle;
 import com.ninni.uber.client.particle.WindParticle;
+import com.ninni.uber.client.renderer.entity.HoundRenderer;
 import com.ninni.uber.registry.UberBlocks;
+import com.ninni.uber.registry.UberEntityTypes;
 import com.ninni.uber.registry.UberParticleTypes;
 import com.ninni.uber.registry.secondary.UberFluids;
 import net.fabricmc.api.ClientModInitializer;
@@ -14,6 +18,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
@@ -42,6 +47,9 @@ public class UberClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.translucent(),
                 UberBlocks.MANA_GEL
         );
+
+        Reflection.initialize(UberEntityModelLayers.class);
+        EntityRendererRegistry.register(UberEntityTypes.HOUND, HoundRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.BLOWING_WIND, BlowingWindParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.WIND, WindParticle.Factory::new);

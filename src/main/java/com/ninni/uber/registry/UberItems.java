@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 
 public class UberItems {
 
@@ -23,6 +24,7 @@ public class UberItems {
     public static final Item MARROW_PLANKS = register("marrow_planks", new BlockItem(UberBlocks.MARROW_PLANKS, new FabricItemSettings()));
     public static final Item MANA_BUCKET = register("mana_bucket", new ManaBucketItem(UberFluids.MANA, new FabricItemSettings().maxCount(1)));
     public static final Item MANA_GEL = register("mana_gel", new BlockItem(UberBlocks.MANA_GEL, new FabricItemSettings()));
+    public static final Item HOUND_SPAWN_EGG = register("hound_spawn_egg", new SpawnEggItem(UberEntityTypes.HOUND, 0x43518A, 0x0AB405, new Item.Properties().stacksTo(64)));
 
     public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));
     public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
@@ -30,6 +32,7 @@ public class UberItems {
     public static final Item MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new BlockItem(UberBlocks.MELLOW_ELYSIAFUZZ, new FabricItemSettings()));
     public static final Item ELYSIAVELD = register("elysiaveld", new BlockItem(UberBlocks.ELYSIAVELD, new FabricItemSettings()));
     public static final Item CLOTTONBALL = register("clottonball", new BlockItem(UberBlocks.CLOTTONBALL, new FabricItemSettings()));
+
 
     private static Item register(String id, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Uber.MOD_ID, id), item);

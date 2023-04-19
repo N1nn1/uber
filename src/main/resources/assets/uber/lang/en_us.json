@@ -13,6 +13,8 @@
 	"item.uber.mana_bucket": "Mana Bucket",
 	"block.uber.mana_gel": "Mana Gel",
 	"block.uber.mana_cauldron": "Mana Cauldron",
+	"entity.uber.hound": "Hound",
+	"item.uber.hound_spawn_egg": "Hound Spawn Egg",
 
 	"block.uber.mellorock": "Mellorock",
 	"block.uber.crownstone": "Crownstone",
