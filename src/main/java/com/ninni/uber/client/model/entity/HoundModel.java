@@ -60,6 +60,7 @@ public class HoundModel<T extends Hound> extends HierarchicalModel<T> {
     public void setupAnim(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch)  {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.animateWalk(HoundAnimations.WALK, limbAngle, limbDistance, 2.0f, 2.5f);
+        this.animate(entity.attackAnimationState, HoundAnimations.ATTACK, animationProgress);
         this.animate(entity.idleAnimationState, HoundAnimations.IDLE, animationProgress);
         this.animate(entity.emergeAnimationState, HoundAnimations.EMERGE, animationProgress);
         this.animate(entity.limpAnimationState, HoundAnimations.LIMP, animationProgress);
