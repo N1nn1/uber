@@ -28,6 +28,7 @@ public class UberPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MARROW_RIB = createKey("marrow_rib");
     public static final ResourceKey<PlacedFeature> MARROW_RIB_CIRCLE = createKey("marrow_rib_circle");
     public static final ResourceKey<PlacedFeature> MARROW_DECORATIONS = createKey("marrow_decorations");
+    public static final ResourceKey<PlacedFeature> CLOTTON_SENTINEL = createKey("clotton_sentinel");
 
     public static void bootstrap(BootstapContext<PlacedFeature> bootstapContext) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = bootstapContext.lookup(Registries.CONFIGURED_FEATURE);
@@ -48,6 +49,7 @@ public class UberPlacedFeatures {
         PlacementUtils.register(bootstapContext, MARROW_RIB, holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_RIB));
         PlacementUtils.register(bootstapContext, MARROW_RIB_CIRCLE, holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_RIB_CIRCLE));
         PlacementUtils.register(bootstapContext, MARROW_DECORATIONS, holder6, CountPlacement.of(175), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, CLOTTON_SENTINEL, holderGetter.getOrThrow(UberConfiguredFeatures.CLOTTON_SENTINEL), CountPlacement.of(100), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
     }
 
     public static ResourceKey<PlacedFeature> createKey(String string) {

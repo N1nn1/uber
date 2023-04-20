@@ -52,7 +52,7 @@ public class UberBiomes {
         HolderGetter<PlacedFeature> holderGetter = bootstapContext.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> holderGetter2 = bootstapContext.lookup(Registries.CONFIGURED_CARVER);
         MobSpawnSettings mobSpawnSettings = (new MobSpawnSettings.Builder()).build();
-        BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder(holderGetter, holderGetter2).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.ELYSIAFUZZ_SURFACE).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_SURFACE).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.CROWNSTONE_VEGETATION));
+        BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder(holderGetter, holderGetter2).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.ELYSIAFUZZ_SURFACE).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_SURFACE).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.CROWNSTONE_VEGETATION).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, UberPlacedFeatures.CLOTTON_SENTINEL));
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(false)

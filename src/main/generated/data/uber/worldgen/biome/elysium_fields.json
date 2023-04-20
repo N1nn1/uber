@@ -33,7 +33,8 @@
     [
       "uber:elysiafuzz_surface",
       "uber:mellow_elysiafuzz_surface",
-      "uber:crownstone_vegetation"
+      "uber:crownstone_vegetation",
+      "uber:clotton_sentinel"
     ]
   ],
   "has_precipitation": false,

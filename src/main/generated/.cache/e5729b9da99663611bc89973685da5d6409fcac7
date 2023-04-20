@@ -1,12 +1,13 @@
-// 1.19.4	2023-04-19T06:48:07.1649188	Uber/worldgen/placed_feature
+// 1.19.4	2023-04-20T08:37:31.7296061	Uber/worldgen/placed_feature
 c1f246930f97e5421d1871917271328dfcce0fa6 data\uber\worldgen\placed_feature\lake_mana.json
 9d2b7b0ca4462f21e18ce7d1b60cc76e00611c9a data\uber\worldgen\placed_feature\marrow_decorations.json
 1dfc9a036902648fd9767511c7731d5c4dec360a data\uber\worldgen\placed_feature\marrow_rib_circle.json
-0ae9ecc1e35d36c537dae265644ec8f8d147fc84 data\uber\worldgen\placed_feature\crownstone_vegetation.json
 b662bc09ffa70d40a6879fe3ad2aa5620e096df7 data\uber\worldgen\placed_feature\elysiafuzz_surface.json
 bf5683d3765a5e04df9da3d20a25b6f3978ed166 data\uber\worldgen\placed_feature\marrow_cage.json
-a1e18e5a63d940db313d6382077b2323c940d35e data\uber\worldgen\placed_feature\ore_medulesoil.json
 9a1093aef9d6a2c7c1927981edd728209b81a38a data\uber\worldgen\placed_feature\marrow_tree.json
+fbb3d01e0f884e5b53b2d6d336d9b36865342857 data\uber\worldgen\placed_feature\mellow_elysiafuzz_surface.json
+0ae9ecc1e35d36c537dae265644ec8f8d147fc84 data\uber\worldgen\placed_feature\crownstone_vegetation.json
+a1e18e5a63d940db313d6382077b2323c940d35e data\uber\worldgen\placed_feature\ore_medulesoil.json
 3941d5083f50e7ae8f06f73f599c50d98df41972 data\uber\worldgen\placed_feature\phasmofuzz_surface.json
 e18389f56c463418474f3f9e02c09d618a2cff9a data\uber\worldgen\placed_feature\marrow_rib.json
-fbb3d01e0f884e5b53b2d6d336d9b36865342857 data\uber\worldgen\placed_feature\mellow_elysiafuzz_surface.json
+5a47270feb4789f3bc03926a238da03e92fcec6b data\uber\worldgen\placed_feature\clotton_sentinel.json

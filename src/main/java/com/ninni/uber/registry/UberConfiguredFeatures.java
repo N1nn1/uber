@@ -43,6 +43,7 @@ public class UberConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MARROW_RIB = createKey("marrow_rib");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MARROW_RIB_CIRCLE = createKey("marrow_rib_circle");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MARROW_DECORATIONS = createKey("marrow_decorations");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CLOTTON_SENTINEL = createKey("clotton_sentinel");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> bootstapContext) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = bootstapContext.lookup(Registries.CONFIGURED_FEATURE);
@@ -60,6 +61,7 @@ public class UberConfiguredFeatures {
         FeatureUtils.register(bootstapContext, MARROW_RIB, UberFeatures.MARROW_RIB, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, MARROW_RIB_CIRCLE, UberFeatures.MARROW_RIB_CIRCLE, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, MARROW_DECORATIONS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter2.getOrThrow(UberPlacedFeatures.MARROW_CAGE), 0.5F), new WeightedPlacedFeature(holderGetter2.getOrThrow(UberPlacedFeatures.MARROW_RIB), 0.5F), new WeightedPlacedFeature(holderGetter2.getOrThrow(UberPlacedFeatures.MARROW_RIB_CIRCLE), 0.5F)), holderGetter2.getOrThrow(UberPlacedFeatures.MARROW_TREE)));
+        FeatureUtils.register(bootstapContext, CLOTTON_SENTINEL, UberFeatures.CLOTTON_SENTINEL, NoneFeatureConfiguration.INSTANCE);
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String string) {

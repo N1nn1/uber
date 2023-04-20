@@ -1,6 +1,7 @@
 package com.ninni.uber.registry;
 
 import com.ninni.uber.Uber;
+import com.ninni.uber.level.gen.ClottonSentinelFeature;
 import com.ninni.uber.level.gen.MarrowCageFeature;
 import com.ninni.uber.level.gen.MarrowRibCircleFeature;
 import com.ninni.uber.level.gen.MarrowRibFeature;
@@ -23,6 +24,7 @@ public class UberFeatures {
     public static final Feature<NoneFeatureConfiguration> MARROW_CAGE = register("marrow_cage", new MarrowCageFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_RIB = register("marrow_rib", new MarrowRibFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_RIB_CIRCLE = register("marrow_rib_circle", new MarrowRibCircleFeature(NoneFeatureConfiguration.CODEC));
+    public static final Feature<NoneFeatureConfiguration> CLOTTON_SENTINEL = register("clotton_sentinel", new ClottonSentinelFeature(NoneFeatureConfiguration.CODEC));
 
     private static <C extends FeatureConfiguration, F extends Feature<C>> F register(String string, F feature) {
         return Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(Uber.MOD_ID, string), feature);
