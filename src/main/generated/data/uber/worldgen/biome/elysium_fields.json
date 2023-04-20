@@ -34,7 +34,8 @@
       "uber:elysiafuzz_surface",
       "uber:mellow_elysiafuzz_surface",
       "uber:crownstone_vegetation",
-      "uber:clotton_sentinel"
+      "uber:clotton_sentinel",
+      "uber:elysium_oasis"
     ]
   ],
   "has_precipitation": false,

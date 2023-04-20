@@ -28,6 +28,7 @@ public class UberPlacedFeatureProvider extends FabricDynamicRegistryProvider {
         add(registries, entries, UberPlacedFeatures.MARROW_RIB_CIRCLE);
         add(registries, entries, UberPlacedFeatures.MARROW_DECORATIONS);
         add(registries, entries, UberPlacedFeatures.CLOTTON_SENTINEL);
+        add(registries, entries, UberPlacedFeatures.ELYSIUM_OASIS);
         add(registries, entries, UberPlacedFeatures.ELYSIAFUZZ_SURFACE);
         add(registries, entries, UberPlacedFeatures.CROWNSTONE_VEGETATION);
         add(registries, entries, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
