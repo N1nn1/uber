@@ -37,13 +37,10 @@ public class ManaCauldronBlock extends Block {
     @Override
     @Environment(EnvType.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        double x = pos.getX() + 0.5D + (0.5D - random.nextDouble());
-        double y = pos.getY();
-        double z = pos.getZ() + 0.5D + (0.5D - random.nextDouble());
         int l = getLevel(state);
-        if (l == 1) y += 0.7;
-        else if (l == 2) y += 0.9;
-        else if (l == 3) y += 1.1;
+        double x = pos.getX() + 0.5D + (0.5D - random.nextDouble());
+        double y = pos.getY() + (0.7D + (l - 1) * 0.2D);
+        double z = pos.getZ() + 0.5D + (0.5D - random.nextDouble());
         if (random.nextInt(5) == 0) level.addParticle(UberParticleTypes.MANA_CAULDRON, x, y, z, 0, 0, 0);
     }
 
