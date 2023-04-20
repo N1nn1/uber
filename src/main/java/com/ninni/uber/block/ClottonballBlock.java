@@ -2,8 +2,8 @@ package com.ninni.uber.block;
 
 import com.ninni.uber.UberTags;
 import com.ninni.uber.registry.UberBlocks;
+import com.ninni.uber.registry.UberParticleTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -20,9 +20,9 @@ public class ClottonballBlock extends UberVegetationBlock{
         super.animateTick(blockState, level, blockPos, randomSource);
         if (randomSource.nextInt(20) == 0) {
             double d = (double)blockPos.getX() + randomSource.nextDouble();
-            double e = (double)blockPos.getY() + 0.8;
+            double e = (double)blockPos.getY() + 0.6;
             double f = (double)blockPos.getZ() + randomSource.nextDouble();
-            level.addParticle(ParticleTypes.CLOUD, d, e, f, randomSource.nextFloat() * 0.15, 0.05, randomSource.nextFloat() * 0.15);
+            level.addParticle(UberParticleTypes.CLOTTON, d, e, f, 0, 0.05, 0);
             //TODO custom particle
         }
     }

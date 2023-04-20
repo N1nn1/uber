@@ -2,10 +2,7 @@ package com.ninni.uber;
 
 import com.google.common.reflect.Reflection;
 import com.ninni.uber.client.model.entity.UberEntityModelLayers;
-import com.ninni.uber.client.particle.BlowingWindParticle;
-import com.ninni.uber.client.particle.CalmWindParticle;
-import com.ninni.uber.client.particle.ManaParticle;
-import com.ninni.uber.client.particle.WindParticle;
+import com.ninni.uber.client.particle.*;
 import com.ninni.uber.client.renderer.entity.HoundRenderer;
 import com.ninni.uber.registry.UberBlocks;
 import com.ninni.uber.registry.UberEntityTypes;
@@ -56,5 +53,6 @@ public class UberClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.CALM_WIND, CalmWindParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.MANA, ManaParticle.NormalFactory::new);
         ParticleFactoryRegistry.getInstance().register(UberParticleTypes.MANA_CAULDRON, ManaParticle.CauldronFactory::new);
+        ParticleFactoryRegistry.getInstance().register(UberParticleTypes.CLOTTON, ClottonParticle.Factory::new);
     }
 }

@@ -1,9 +1,7 @@
 package com.ninni.uber.entity;
 
-import com.ninni.uber.entity.pose.UberPose;
 import com.ninni.uber.registry.UberEntityTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -12,8 +10,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -31,10 +32,12 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.UUID;
+
 public class Hound extends Monster {
+    private static final UUID LIMP_MOVEMENT_MODIFIER_UUID = UUID.fromString("ad287975-57a5-45fe-b0b4-ecbfe068b766");
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState attackAnimationState = new AnimationState();
-    public final AnimationState limpAnimationState = new AnimationState();
     public final AnimationState emergeAnimationState = new AnimationState();
     private boolean spawnedAtDeath;
     public int idleAnimationTimeout = 0;
@@ -48,7 +51,7 @@ public class Hound extends Monster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1.75f, true));
+        this.goalSelector.addGoal(0, new MeleeAttackGoal(this,1.75f, true));
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
@@ -91,20 +94,26 @@ public class Hound extends Monster {
         this.spawnedAtDeath = bl;
     }
 
+    public boolean isLimping() {
+        return this.getHealth() < this.getMaxHealth() % 4;
+    }
+    public boolean isEmerging() {
+        return this.emergeTick > 0;
+    }
 
     @Override
     public void aiStep() {
         super.aiStep();
         if (this.attackTick > 0) this.attackTick--;
-        if (this.emergeTick > 0 && !level.isClientSide) {
+        if (isEmerging() && !level.isClientSide) {
             this.setPose(Pose.EMERGING);
             this.emergeTick--;
-            Player player = this.level.getNearestPlayer(this, 10);
+            Player player = this.level.getNearestPlayer(this, 15);
             if (player != null){
                 this.getLookControl().setLookAt(player);
             }
         }
-        if (!level.isClientSide && this.emergeTick == 0) this.setPose(Pose.STANDING);
+        if (!level.isClientSide && !isEmerging()) this.setPose(Pose.STANDING);
     }
 
     @Override
@@ -113,10 +122,6 @@ public class Hound extends Monster {
             if (this.getPose() == Pose.EMERGING) {
                 this.emergeAnimationState.start(this.tickCount);
             } else this.emergeAnimationState.stop();
-
-            if (this.getPose() == UberPose.LIMP.get()) {
-                this.limpAnimationState.start(this.tickCount);
-            } else this.limpAnimationState.stop();
         }
         super.onSyncedDataUpdated(entityDataAccessor);
     }
@@ -129,10 +134,13 @@ public class Hound extends Monster {
 
     @Override
     public boolean doHurtTarget(Entity entity) {
-        if (entity instanceof Player) this.attackTick = 20;
-        this.level.broadcastEntityEvent(this, (byte)4);
-        this.playSound(SoundEvents.RAVAGER_ATTACK, 1.0f, 1.0f);
-        return super.doHurtTarget(entity);
+        if (!isEmerging()) {
+            if (entity instanceof Player) this.attackTick = 20;
+            this.level.broadcastEntityEvent(this, (byte) 4);
+            this.playSound(SoundEvents.RAVAGER_ATTACK, 1.0f, 1.0f);
+            return super.doHurtTarget(entity);
+        }
+        return false;
     }
 
     @Override
@@ -143,10 +151,63 @@ public class Hound extends Monster {
                 this.idleAnimationState.start(this.tickCount);
             } else --this.idleAnimationTimeout;
             if (this.getPose() == Pose.EMERGING) this.clientDiggingParticles(this.emergeAnimationState);
+        } else {
+            if (this.getHealth() < this.getMaxHealth() % 4) this.addLimpMovementModifier();
+            else removeLimpMovementModifier();
         }
 
         super.tick();
     }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public void die(DamageSource damageSource) {
+        if (!this.level.isClientSide() && !this.isSpawnedAtDeath()) {
+            int i = UniformInt.of(2, 6).sample(this.random);
+            for (int j = 0; j <= i; ++j) {
+                Hound hound = UberEntityTypes.HOUND.create(this.level);
+                assert hound != null;
+                double x = this.getX() + Mth.randomBetween(hound.random, -3f, 3f);
+                double y = this.getY() + this.random.nextInt(-1, 1);
+                double z = this.getZ() + Mth.randomBetween(hound.random, -3f, 3f);
+
+                BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
+                BlockPos belowPos = new BlockPos((int) x, (int) y - 1, (int) z);
+                BlockState spawnState = this.level.getBlockState(pos);
+                BlockState belowSpawnState = this.level.getBlockState(belowPos);
+
+                boolean bl = !spawnState.getBlock().isCollisionShapeFullBlock(spawnState, this.level, pos);
+                boolean bl2 = belowSpawnState.getBlock().isCollisionShapeFullBlock(belowSpawnState, this.level, belowPos);
+
+
+                if (bl && bl2) hound.moveTo(x, y, z, this.getYRot(), this.getXRot());
+                hound.emergeTick = 60;
+                hound.setSpawnedAtDeath(true);
+                this.level.addFreshEntity(hound);
+            }
+        }
+        super.die(damageSource);
+
+    }
+
+    private void removeLimpMovementModifier() {
+        AttributeInstance attributeInstance = this.getAttribute(Attributes.MOVEMENT_SPEED);
+        if (attributeInstance == null) return;
+        if (attributeInstance.getModifier(LIMP_MOVEMENT_MODIFIER_UUID) != null) {
+            attributeInstance.removeModifier(LIMP_MOVEMENT_MODIFIER_UUID);
+        }
+    }
+
+    private void addLimpMovementModifier() {
+        AttributeInstance attributeInstance = this.getAttribute(Attributes.MOVEMENT_SPEED);
+        float speedModifier = -0.05F;
+        AttributeModifier modifier;
+        if (this.isLimping()) modifier = new AttributeModifier(LIMP_MOVEMENT_MODIFIER_UUID, "Limp movement modifier", speedModifier, AttributeModifier.Operation.ADDITION);
+        else modifier = new AttributeModifier(LIMP_MOVEMENT_MODIFIER_UUID, "Limp movement modifier", 0, AttributeModifier.Operation.ADDITION);
+        if (attributeInstance == null || attributeInstance.hasModifier(modifier)) return;
+        attributeInstance.addTransientModifier(modifier);
+    }
+
 
     private void clientDiggingParticles(AnimationState animationState) {
         if ((float)animationState.getAccumulatedTime() < 4500.0f) {
@@ -154,40 +215,14 @@ public class Hound extends Monster {
             BlockState blockState = this.getBlockStateOn();
             if (blockState.getRenderShape() != RenderShape.INVISIBLE) {
                 for (int i = 0; i < 5; ++i) {
-                    double d = this.getX() + (double) Mth.randomBetween(randomSource, -0.7f, 0.7f);
+                    float radius = 0.5f;
+                    double d = this.getX() + (double) Mth.randomBetween(randomSource, -radius, radius);
                     double e = this.getY();
-                    double f = this.getZ() + (double)Mth.randomBetween(randomSource, -0.7f, 0.7f);
+                    double f = this.getZ() + (double)Mth.randomBetween(randomSource, -radius, radius);
                     this.level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, blockState), d, e, f, 0.0, 0.0, 0.0);
                 }
             }
         }
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    protected void tickDeath() {
-        if (this.deathTime < 10 && !this.level.isClientSide() && !this.isSpawnedAtDeath()) {
-
-            Hound hound = UberEntityTypes.HOUND.create(this.level);
-            assert hound != null;
-            double x = this.getX() + Mth.randomBetween(hound.random, -3f, 3f);
-            double y = this.getY() + this.random.nextInt(-1, 1);
-            double z = this.getZ() + Mth.randomBetween(hound.random, -3f, 3f);
-            BlockPos pos = new BlockPos((int)x, (int)y, (int)z);
-            BlockPos belowPos = new BlockPos((int)x, (int)y - 1, (int)z);
-            BlockState spawnState = this.level.getBlockState(pos);
-            BlockState belowSpawnState = this.level.getBlockState(belowPos);
-
-            boolean bl = !spawnState.getBlock().isCollisionShapeFullBlock(spawnState, this.level, pos);
-            boolean bl2 = belowSpawnState.getBlock().isCollisionShapeFullBlock(belowSpawnState, this.level, belowPos);
-
-
-            if (bl && bl2) hound.moveTo(x, y, z, this.getYRot(), this.getXRot());
-            hound.emergeTick = 60;
-            hound.setSpawnedAtDeath(true);
-            this.level.addFreshEntity(hound);
-        }
-        super.tickDeath();
     }
 
     @Override
@@ -197,7 +232,7 @@ public class Hound extends Monster {
 
     @Override
     public void travel(Vec3 movementInput) {
-        if (this.emergeTick > 0) {
+        if (isEmerging()) {
             this.setDeltaMovement(this.getDeltaMovement().multiply(0.0, 1.0, 0.0));
             movementInput = movementInput.multiply(0.0, 1.0, 0.0);
         }
@@ -206,12 +241,12 @@ public class Hound extends Monster {
 
     @Override
     protected void doPush(Entity entity) {
-        if (this.emergeTick > 0) super.doPush(entity);
+        if (isEmerging()) super.doPush(entity);
     }
 
     @Override
     public boolean isInvulnerableTo(DamageSource damageSource) {
-        if (this.emergeTick > 0 && !damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
+        if (isEmerging() && !damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             return true;
         }
         return super.isInvulnerableTo(damageSource);
@@ -219,7 +254,7 @@ public class Hound extends Monster {
 
     @Override
     public boolean isPushable() {
-        return !(this.emergeTick > 0) && super.isPushable();
+        return !isEmerging() && super.isPushable();
     }
 
     @SuppressWarnings("unused")

@@ -59,14 +59,16 @@ public class HoundModel<T extends Hound> extends HierarchicalModel<T> {
     @Override
     public void setupAnim(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch)  {
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.animateWalk(HoundAnimations.WALK, limbAngle, limbDistance, 2.0f, 2.5f);
+
+        if (entity.isLimping()) this.animateWalk(HoundAnimations.LIMP, limbAngle, limbDistance, 6.0f, 2.5f);
+        else this.animateWalk(HoundAnimations.WALK, limbAngle, limbDistance, 2.0f, 2.5f);
         this.animate(entity.attackAnimationState, HoundAnimations.ATTACK, animationProgress);
         this.animate(entity.idleAnimationState, HoundAnimations.IDLE, animationProgress);
         this.animate(entity.emergeAnimationState, HoundAnimations.EMERGE, animationProgress);
-        this.animate(entity.limpAnimationState, HoundAnimations.LIMP, animationProgress);
         this.head.xRot += headPitch * ((float) Math.PI / 180f);
         this.head.yRot += headYaw * ((float) Math.PI / 180f);
-        this.model.visible = entity.tickCount > 2;
+        if (entity.isSpawnedAtDeath()) this.model.visible = entity.tickCount > 2;
+        else this.model.visible = entity.tickCount > 1;
     }
 
     @Override
