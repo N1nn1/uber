@@ -18,7 +18,7 @@ public class UberEntityTypes {
                     .defaultAttributes(Hound::createHoundAttributes)
                     .spawnGroup(MobCategory.MONSTER)
                     .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE_WG, Hound::canSpawn)
-                    .dimensions(EntityDimensions.scalable(1.2F, 1.2F))
+                    .dimensions(EntityDimensions.scalable(0.8F, 1.2F))
                     .trackRangeChunks(10)
     );
 

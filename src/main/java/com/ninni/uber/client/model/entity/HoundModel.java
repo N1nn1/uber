@@ -66,7 +66,7 @@ public class HoundModel<T extends Hound> extends HierarchicalModel<T> {
         this.animate(entity.limpAnimationState, HoundAnimations.LIMP, animationProgress);
         this.head.xRot += headPitch * ((float) Math.PI / 180f);
         this.head.yRot += headYaw * ((float) Math.PI / 180f);
-
+        this.model.visible = entity.tickCount > 2;
     }
 
     @Override

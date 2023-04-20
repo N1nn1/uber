@@ -1619,6 +1619,16 @@ public class HoundAnimations {
                             new Keyframe(0.7916766f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation(HoundModel.TAIL_BASE,
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.20834334f, KeyframeAnimations.posVec(0f, 1f, -2f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.375f, KeyframeAnimations.posVec(0f, 1f, -2f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.5834334f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation(HoundModel.TAIL_BASE,
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
