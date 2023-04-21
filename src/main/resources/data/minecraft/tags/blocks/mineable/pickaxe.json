@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "uber:dreadstone",
+    "uber:dreadstone_stairs",
+    "uber:dreadstone_slab",
+    "uber:dreadstone_wall",
+    "uber:chiseled_dreadstone",
+    "uber:dreadstone_pillar",
+    "uber:smooth_dreadstone",
+    "uber:smooth_dreadstone_slab",
+    "uber:cracked_dreadstone_tiles",
+    "uber:dreadstone_tiles",
+    "uber:dreadstone_tile_stairs",
+    "uber:dreadstone_tile_slab",
+    "uber:dreadstone_tile_wall"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "building",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "uber:dreadstone"
+  },
+  "result": "uber:smooth_dreadstone",
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uber:block/dreadstone_tile_slab"
+    },
+    "type=double": {
+      "model": "uber:block/dreadstone_tiles"
+    },
+    "type=top": {
+      "model": "uber:block/dreadstone_tile_slab_top"
+    }
+  }
+}

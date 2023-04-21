@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "uber:block/smooth_dreadstone",
+    "top": "uber:block/smooth_dreadstone",
+    "side": "uber:block/smooth_dreadstone_slab"
+  }
+}

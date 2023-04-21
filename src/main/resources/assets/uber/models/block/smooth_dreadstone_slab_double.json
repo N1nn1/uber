@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "uber:block/smooth_dreadstone",
+    "side": "uber:block/smooth_dreadstone_slab"
+  }
+}

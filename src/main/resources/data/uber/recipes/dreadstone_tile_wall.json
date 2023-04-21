@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uber:dreadstone_tiles"
+    }
+  },
+  "result": {
+    "item": "uber:dreadstone_tile_wall",
+    "count": 6
+  }
+}

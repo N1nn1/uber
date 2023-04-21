@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "uber:block/dreadstone",
+    "top": "uber:block/dreadstone",
+    "side": "uber:block/dreadstone"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "uber:dreadstone_slab",
+    "uber:smooth_dreadstone_slab",
+    "uber:dreadstone_tile_slab"
+  ]
+}

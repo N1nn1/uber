@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uber:smooth_dreadstone"
+  },
+  "result": "uber:smooth_dreadstone_slab",
+  "count": 2,
+  "show_notification": true
+}

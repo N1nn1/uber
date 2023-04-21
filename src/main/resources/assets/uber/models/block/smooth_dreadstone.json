@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "uber:block/dreadstone"
+    "all": "uber:block/smooth_dreadstone"
   }
 }

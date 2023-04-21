@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uber:dreadstone"
+  },
+  "result": "uber:dreadstone_tile_wall",
+  "count": 1,
+  "show_notification": true
+}

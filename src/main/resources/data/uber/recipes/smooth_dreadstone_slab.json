@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uber:smooth_dreadstone"
+    }
+  },
+  "result": {
+    "item": "uber:smooth_dreadstone_slab",
+    "count": 6
+  },
+  "show_notification": true
+}

@@ -15,7 +15,22 @@ import net.minecraft.world.level.material.MaterialColor;
 @SuppressWarnings("unused")
 public class UberBlocks {
 
-    public static final Block DREADSTONE = register("dreadstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    //GRYMMOTH
+        //dreadstone
+    public static final Block DREADSTONE = register("dreadstone", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE)));
+    public static final Block DREADSTONE_STAIRS = register("dreadstone_stairs", new StairBlock(DREADSTONE.defaultBlockState(), BlockBehaviour.Properties.copy(DREADSTONE)));
+    public static final Block DREADSTONE_SLAB = register("dreadstone_slab", new SlabBlock(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block DREADSTONE_WALL = register("dreadstone_wall", new WallBlock(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block CHISELED_DREADSTONE = register("chiseled_dreadstone", new Block(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block DREADSTONE_PILLAR = register("dreadstone_pillar", new RotatedPillarBlock(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block SMOOTH_DREADSTONE = register("smooth_dreadstone", new Block(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block SMOOTH_DREADSTONE_SLAB = register("smooth_dreadstone_slab", new SlabBlock(FabricBlockSettings.copyOf(SMOOTH_DREADSTONE)));
+    public static final Block DREADSTONE_TILES = register("dreadstone_tiles", new Block(FabricBlockSettings.copyOf(DREADSTONE)));
+    public static final Block CRACKED_DREADSTONE_TILES = register("cracked_dreadstone_tiles", new Block(FabricBlockSettings.copyOf(DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_STAIRS = register("dreadstone_tile_stairs", new StairBlock(CRACKED_DREADSTONE_TILES.defaultBlockState(), BlockBehaviour.Properties.copy(CRACKED_DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_SLAB = register("dreadstone_tile_slab", new SlabBlock(FabricBlockSettings.copyOf(CRACKED_DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_WALL = register("dreadstone_tile_wall", new WallBlock(FabricBlockSettings.copyOf(CRACKED_DREADSTONE_TILES)));
+
     public static final Block MEDULESOIL = register("medulesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
     public static final Block PHASMOFUZZ = register("phasmofuzz", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
     public static final Block PHASMOFOLLICLE = register("phasmofollicle", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), false));
@@ -28,6 +43,7 @@ public class UberBlocks {
     public static final Block MANA_GEL = register("mana_gel", new ManaGelBlock(FabricBlockSettings.of(Material.CLAY, MaterialColor.GRASS).sounds(SoundType.HONEY_BLOCK).color(MaterialColor.COLOR_LIGHT_GREEN).noOcclusion().lightLevel(blockState -> 10)));
     public static final Block MANA_CAULDRON = register("mana_cauldron", new ManaCauldronBlock(FabricBlockSettings.copy(Blocks.CAULDRON).lightLevel(ManaCauldronBlock::getLightLevel)));
 
+    //ECSTACE
     public static final Block MELLOROCK = register("mellorock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block ELYSIAFUZZ = register("elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
