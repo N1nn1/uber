@@ -9,6 +9,7 @@ import com.ninni.uber.level.gen.MarrowRibFeature;
 import com.ninni.uber.level.gen.MarrowTreeFeature;
 import com.ninni.uber.level.gen.UberSurfaceFeature;
 import com.ninni.uber.level.gen.SoilPatchFeature;
+import com.ninni.uber.level.gen.config.MarrowTreeConfig;
 import com.ninni.uber.level.gen.config.UberSurfaceConfig;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -21,7 +22,7 @@ public class UberFeatures {
 
     public static final Feature<UberSurfaceConfig> UBER_SURFACE = register("grymmoth_surface", new UberSurfaceFeature(UberSurfaceConfig.CODEC));
     public static final Feature<NoneFeatureConfiguration> SOIL_PATCH = register("soil_patch", new SoilPatchFeature(NoneFeatureConfiguration.CODEC));
-    public static final Feature<NoneFeatureConfiguration> MARROW_TREE = register("marrow_tree", new MarrowTreeFeature(NoneFeatureConfiguration.CODEC));
+    public static final Feature<MarrowTreeConfig> MARROW_TREE = register("marrow_tree", new MarrowTreeFeature(MarrowTreeConfig.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_CAGE = register("marrow_cage", new MarrowCageFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_RIB = register("marrow_rib", new MarrowRibFeature(NoneFeatureConfiguration.CODEC));
     public static final Feature<NoneFeatureConfiguration> MARROW_RIB_CIRCLE = register("marrow_rib_circle", new MarrowRibCircleFeature(NoneFeatureConfiguration.CODEC));

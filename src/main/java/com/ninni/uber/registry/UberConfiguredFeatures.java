@@ -2,6 +2,7 @@ package com.ninni.uber.registry;
 
 import com.ninni.uber.Uber;
 import com.ninni.uber.UberTags;
+import com.ninni.uber.level.gen.config.MarrowTreeConfig;
 import com.ninni.uber.level.gen.config.UberSurfaceConfig;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -57,7 +58,7 @@ public class UberConfiguredFeatures {
         FeatureUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_SURFACE, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.MELLOW_ELYSIAFUZZ_REPLACES, BlockStateProvider.simple(UberBlocks.MELLOW_ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.MELLOROCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(4, 7), 0.3f));
         FeatureUtils.register(bootstapContext, ORE_MEDULESOIL, UberFeatures.SOIL_PATCH, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, LAKE_MANA, Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(UberBlocks.MANA.defaultBlockState()), BlockStateProvider.simple(UberBlocks.DREADSTONE.defaultBlockState())));
-        FeatureUtils.register(bootstapContext, MARROW_TREE, UberFeatures.MARROW_TREE, NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(bootstapContext, MARROW_TREE, UberFeatures.MARROW_TREE, new MarrowTreeConfig(0.001F));
         FeatureUtils.register(bootstapContext, MARROW_CAGE, UberFeatures.MARROW_CAGE, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, MARROW_RIB, UberFeatures.MARROW_RIB, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, MARROW_RIB_CIRCLE, UberFeatures.MARROW_RIB_CIRCLE, NoneFeatureConfiguration.INSTANCE);
