@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#uber:ecstace_fuzz",
+    "uber:crownstone",
+    "uber:mellorock",
+    "minecraft:calcite"
+  ]
+}
