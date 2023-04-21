@@ -37,6 +37,7 @@ public class UberClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 UberBlocks.PHASMOFOLLICLE,
                 UberBlocks.ISTALKS,
+                UberBlocks.POTTED_ISTALKS,
                 UberBlocks.TALL_ISTALKS,
                 UberBlocks.ELYSIAVELD,
                 UberBlocks.CLOTTONBALL

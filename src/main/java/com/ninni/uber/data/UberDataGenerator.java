@@ -12,9 +12,6 @@ public class UberDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-        pack.addProvider(UberModelProvider::new);
-        pack.addProvider(UberRecipeProvider::new);
-        pack.addProvider(UberBlockTagProvider::new);
         pack.addProvider(UberBiomeProvider::new);
         pack.addProvider(UberConfiguredFeatureProvider::new);
         pack.addProvider(UberPlacedFeatureProvider::new);

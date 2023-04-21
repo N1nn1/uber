@@ -1,6 +1,6 @@
 {
   "type": "uber:marrow_tree",
   "config": {
-    "funny_chance": 1.0
+    "funny_chance": 0.001
   }
 }
