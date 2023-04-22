@@ -2,6 +2,7 @@ package com.ninni.uber.entity;
 
 import com.ninni.uber.registry.UberEntityTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -10,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.SpawnUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -170,20 +172,13 @@ public class Hound extends Monster {
                 double x = this.getX() + Mth.randomBetween(hound.random, -3f, 3f);
                 double y = this.getY() + this.random.nextInt(-1, 1);
                 double z = this.getZ() + Mth.randomBetween(hound.random, -3f, 3f);
-
                 BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
-                BlockPos belowPos = new BlockPos((int) x, (int) y - 1, (int) z);
-                BlockState spawnState = this.level.getBlockState(pos);
-                BlockState belowSpawnState = this.level.getBlockState(belowPos);
-
-                boolean bl = !spawnState.getBlock().isCollisionShapeFullBlock(spawnState, this.level, pos);
-                boolean bl2 = belowSpawnState.getBlock().isCollisionShapeFullBlock(belowSpawnState, this.level, belowPos);
-
-
-                if (bl && bl2) hound.moveTo(x, y, z, this.getYRot(), this.getXRot());
-                hound.emergeTick = 60;
-                hound.setSpawnedAtDeath(true);
-                this.level.addFreshEntity(hound);
+                if (this.level.getBlockState(pos.below()).isFaceSturdy(this.level, pos.below(), Direction.UP) && this.level.isEmptyBlock(pos)) {
+                    hound.moveTo(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, this.getYRot(), this.getXRot());
+                    hound.emergeTick = 60;
+                    hound.setSpawnedAtDeath(true);
+                    this.level.addFreshEntity(hound);
+                }
             }
         }
         super.die(damageSource);
