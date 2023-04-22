@@ -18,10 +18,13 @@ public interface UberTags {
     TagKey<Block> MEDULESOIL = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "medulesoil"));
     TagKey<Block> GRYMMOTH_FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "grymmoth_fuzz"));
     TagKey<Block> PHASMOFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "phasmofuzz_replaces"));
+    TagKey<Block> PHASMOFUZZ_REPLACEABLE = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "phasmofuzz_replaceable"));
 
     TagKey<Block> ECSTACE_FUZZ = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "ecstace_fuzz"));
     TagKey<Block> ELYSIAFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "elysiafuzz_replaces")) ;
+    TagKey<Block> ELYSIAFUZZ_REPLACEABLE = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "elysiafuzz_replaceable")) ;
     TagKey<Block> MELLOW_ELYSIAFUZZ_REPLACES = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "mellow_elysiafuzz_replaces")) ;
+    TagKey<Block> MELLOW_ELYSIAFUZZ_REPLACEABLE = TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, "mellow_elysiafuzz_replaceable")) ;
 
     //biome tags
     TagKey<Biome> GRYMMOTH = TagKey.create(Registries.BIOME, new ResourceLocation(MOD_ID, "grymmoth"));

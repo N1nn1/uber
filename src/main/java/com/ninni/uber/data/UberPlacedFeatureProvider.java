@@ -20,6 +20,7 @@ public class UberPlacedFeatureProvider extends FabricDynamicRegistryProvider {
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
         add(registries, entries, UberPlacedFeatures.PHASMOFUZZ_SURFACE);
+        add(registries, entries, UberPlacedFeatures.PHASMOFUZZ_BONEMEAL);
         add(registries, entries, UberPlacedFeatures.ORE_MEDULESOIL);
         add(registries, entries, UberPlacedFeatures.LAKE_MANA);
         add(registries, entries, UberPlacedFeatures.MARROW_TREE);
@@ -30,8 +31,10 @@ public class UberPlacedFeatureProvider extends FabricDynamicRegistryProvider {
         add(registries, entries, UberPlacedFeatures.CLOTTON_SENTINEL);
         add(registries, entries, UberPlacedFeatures.ELYSIUM_OASIS);
         add(registries, entries, UberPlacedFeatures.ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberPlacedFeatures.ELYSIAFUZZ_BONEMEAL);
         add(registries, entries, UberPlacedFeatures.CROWNSTONE_VEGETATION);
         add(registries, entries, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberPlacedFeatures.MELLOW_ELYSIAFUZZ_BONEMEAL);
     }
 
     private void add(HolderLookup.Provider registries, Entries entries, ResourceKey<PlacedFeature> configuredFeature) {

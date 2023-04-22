@@ -32,7 +32,7 @@ public class UberBlocks {
     public static final Block DREADSTONE_TILE_WALL = register("dreadstone_tile_wall", new WallBlock(FabricBlockSettings.copyOf(CRACKED_DREADSTONE_TILES)));
 
     public static final Block MEDULESOIL = register("medulesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
-    public static final Block PHASMOFUZZ = register("phasmofuzz", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
+    public static final Block PHASMOFUZZ = register("phasmofuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.PHASMOFUZZ_BONEMEAL));
     public static final Block PHASMOFOLLICLE = register("phasmofollicle", new UberVegetationBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), false));
     public static final Block ISTALKS = register("istalks", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS).luminance(blockState -> 3), false));
     public static final Block POTTED_ISTALKS = register("potted_istalks", new FlowerPotBlock(ISTALKS, BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
@@ -46,8 +46,8 @@ public class UberBlocks {
     //ECSTACE
     public static final Block MELLOROCK = register("mellorock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block ELYSIAFUZZ = register("elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block ELYSIAFUZZ = register("elysiafuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.ELYSIAFUZZ_BONEMEAL));
+    public static final Block MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_BONEMEAL));
     public static final Block ELYSIAVELD = register("elysiaveld", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), true));
     public static final Block CLOTTONBALL = register("clottonball", new ClottonballBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), true));
     public static final Block CLOTTON_BLOCK = register("clotton_block", new Block(FabricBlockSettings.copyOf(Blocks.LIGHT_GRAY_WOOL)));

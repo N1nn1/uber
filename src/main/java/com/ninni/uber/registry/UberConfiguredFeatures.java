@@ -32,9 +32,12 @@ import java.util.List;
 public class UberConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PHASMOFUZZ_SURFACE = createKey("phasmofuzz_surface");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PHASMOFUZZ_BONEMEAL = createKey("phasmofuzz_bonemeal");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PHASMOFUZZ_VEGETATION = createKey("phasmofuzz_vegetation");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ELYSIAFUZZ_SURFACE = createKey("elysiafuzz_surface");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ELYSIAFUZZ_BONEMEAL = createKey("elysiafuzz_bonemeal");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MELLOW_ELYSIAFUZZ_SURFACE = createKey("mellow_elysiafuzz_surface");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MELLOW_ELYSIAFUZZ_BONEMEAL = createKey("mellow_elysiafuzz_bonemeal");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ELYSIAFUZZ_VEGETATION = createKey("elysiafuzz_vegetation");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CROWNSTONE_VEGETATION = createKey("crownstone_vegetation");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_MEDULESOIL = createKey("medulesoil_patch");
@@ -54,8 +57,11 @@ public class UberConfiguredFeatures {
         FeatureUtils.register(bootstapContext, PHASMOFUZZ_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(UberBlocks.PHASMOFOLLICLE.defaultBlockState(), 4).add(UberBlocks.ISTALKS.defaultBlockState(), 2).add(UberBlocks.TALL_ISTALKS.defaultBlockState(), 1))));
         FeatureUtils.register(bootstapContext, ELYSIAFUZZ_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(UberBlocks.ELYSIAVELD.defaultBlockState(), 6).add(UberBlocks.CLOTTONBALL.defaultBlockState(), 1))));
         FeatureUtils.register(bootstapContext, PHASMOFUZZ_SURFACE, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.PHASMOFUZZ_REPLACES, BlockStateProvider.simple(UberBlocks.PHASMOFUZZ), BlockStateProvider.simple(UberBlocks.MEDULESOIL), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(PHASMOFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(4, 7), 0.3f));
+        FeatureUtils.register(bootstapContext, PHASMOFUZZ_BONEMEAL, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.PHASMOFUZZ_REPLACEABLE, BlockStateProvider.simple(UberBlocks.PHASMOFUZZ), BlockStateProvider.simple(UberBlocks.MEDULESOIL), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(PHASMOFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(1, 2), 0.3f));
         FeatureUtils.register(bootstapContext, ELYSIAFUZZ_SURFACE, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.ELYSIAFUZZ_REPLACES, BlockStateProvider.simple(UberBlocks.ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.CROWNSTONE), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(4, 7), 0.3f));
+        FeatureUtils.register(bootstapContext, ELYSIAFUZZ_BONEMEAL, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.ELYSIAFUZZ_REPLACEABLE, BlockStateProvider.simple(UberBlocks.ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.CROWNSTONE), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(1, 2), 0.3f));
         FeatureUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_SURFACE, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.MELLOW_ELYSIAFUZZ_REPLACES, BlockStateProvider.simple(UberBlocks.MELLOW_ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.MELLOROCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(4, 7), 0.3f));
+        FeatureUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_BONEMEAL, UberFeatures.UBER_SURFACE, new UberSurfaceConfig(UberTags.MELLOW_ELYSIAFUZZ_REPLACEABLE, BlockStateProvider.simple(UberBlocks.MELLOW_ELYSIAFUZZ), BlockStateProvider.simple(UberBlocks.MELLOROCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(ELYSIAFUZZ_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0f, 5, 0.05F, UniformInt.of(1, 2), 0.3f));
         FeatureUtils.register(bootstapContext, ORE_MEDULESOIL, UberFeatures.SOIL_PATCH, NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(bootstapContext, LAKE_MANA, Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(UberBlocks.MANA.defaultBlockState()), BlockStateProvider.simple(UberBlocks.DREADSTONE.defaultBlockState())));
         FeatureUtils.register(bootstapContext, MARROW_TREE, UberFeatures.MARROW_TREE, new MarrowTreeConfig(0.001F));

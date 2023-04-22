@@ -3,5 +3,6 @@
   "ingredient": {
     "item": "uber:dreadstone"
   },
-  "result": "uber:dreadstone_pillar"
+  "result": "uber:dreadstone_pillar",
+  "count": 1
 }

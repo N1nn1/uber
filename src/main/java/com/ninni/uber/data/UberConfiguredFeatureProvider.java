@@ -22,6 +22,7 @@ public class UberConfiguredFeatureProvider extends FabricDynamicRegistryProvider
         add(registries, entries, UberConfiguredFeatures.CROWNSTONE_VEGETATION);
         add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_VEGETATION);
         add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_SURFACE);
+        add(registries, entries, UberConfiguredFeatures.PHASMOFUZZ_BONEMEAL);
         add(registries, entries, UberConfiguredFeatures.ORE_MEDULESOIL);
         add(registries, entries, UberConfiguredFeatures.LAKE_MANA);
         add(registries, entries, UberConfiguredFeatures.MARROW_TREE);
@@ -32,7 +33,9 @@ public class UberConfiguredFeatureProvider extends FabricDynamicRegistryProvider
         add(registries, entries, UberConfiguredFeatures.CLOTTON_SENTINEL);
         add(registries, entries, UberConfiguredFeatures.ELYSIUM_OASIS);
         add(registries, entries, UberConfiguredFeatures.ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberConfiguredFeatures.ELYSIAFUZZ_BONEMEAL);
         add(registries, entries, UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
+        add(registries, entries, UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_BONEMEAL);
         add(registries, entries, UberConfiguredFeatures.ELYSIAFUZZ_VEGETATION);
     }
 

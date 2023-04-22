@@ -19,8 +19,11 @@ public class UberPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PHASMOFUZZ_SURFACE = createKey("phasmofuzz_surface");
     public static final ResourceKey<PlacedFeature> ELYSIAFUZZ_SURFACE = createKey("elysiafuzz_surface");
-    public static final ResourceKey<PlacedFeature> CROWNSTONE_VEGETATION = createKey("crownstone_vegetation");
     public static final ResourceKey<PlacedFeature> MELLOW_ELYSIAFUZZ_SURFACE = createKey("mellow_elysiafuzz_surface");
+    public static final ResourceKey<PlacedFeature> PHASMOFUZZ_BONEMEAL = createKey("phasmofuzz_bonemeal");
+    public static final ResourceKey<PlacedFeature> ELYSIAFUZZ_BONEMEAL = createKey("elysiafuzz_bonemeal");
+    public static final ResourceKey<PlacedFeature> MELLOW_ELYSIAFUZZ_BONEMEAL = createKey("mellow_elysiafuzz_bonemeal");
+    public static final ResourceKey<PlacedFeature> CROWNSTONE_VEGETATION = createKey("crownstone_vegetation");
     public static final ResourceKey<PlacedFeature> ORE_MEDULESOIL = createKey("ore_medulesoil");
     public static final ResourceKey<PlacedFeature> LAKE_MANA = createKey("lake_mana");
     public static final ResourceKey<PlacedFeature> MARROW_TREE = createKey("marrow_tree");
@@ -39,12 +42,18 @@ public class UberPlacedFeatures {
         Holder.Reference<ConfiguredFeature<?, ?>> holder3 = holderGetter.getOrThrow(UberConfiguredFeatures.ELYSIAFUZZ_SURFACE);
         Holder.Reference<ConfiguredFeature<?, ?>> holder4 = holderGetter.getOrThrow(UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_SURFACE);
         Holder.Reference<ConfiguredFeature<?, ?>> holder6 = holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_DECORATIONS);
+        Holder.Reference<ConfiguredFeature<?, ?>> holder7 = holderGetter.getOrThrow(UberConfiguredFeatures.PHASMOFUZZ_BONEMEAL);
+        Holder.Reference<ConfiguredFeature<?, ?>> holder8 = holderGetter.getOrThrow(UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_BONEMEAL);
+        Holder.Reference<ConfiguredFeature<?, ?>> holder9 = holderGetter.getOrThrow(UberConfiguredFeatures.ELYSIAFUZZ_BONEMEAL);
         PlacementUtils.register(bootstapContext, PHASMOFUZZ_SURFACE, holder, CountPlacement.of(100), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, PHASMOFUZZ_BONEMEAL, holder7, CountPlacement.of(100), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, CROWNSTONE_VEGETATION, holderGetter.getOrThrow(UberConfiguredFeatures.CROWNSTONE_VEGETATION), CountPlacement.of(110), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE), BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, ORE_MEDULESOIL, holder1, CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, LAKE_MANA, holder2, CountPlacement.of(3), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, ELYSIAFUZZ_SURFACE, holder3, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, ELYSIAFUZZ_BONEMEAL, holder9, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_SURFACE, holder4, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+        PlacementUtils.register(bootstapContext, MELLOW_ELYSIAFUZZ_BONEMEAL, holder8, CountPlacement.of(UniformInt.of(30, 50)), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         PlacementUtils.register(bootstapContext, MARROW_TREE, holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_TREE));
         PlacementUtils.register(bootstapContext, MARROW_CAGE, holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_CAGE));
         PlacementUtils.register(bootstapContext, MARROW_RIB, holderGetter.getOrThrow(UberConfiguredFeatures.MARROW_RIB));
