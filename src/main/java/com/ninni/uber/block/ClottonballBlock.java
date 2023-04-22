@@ -23,7 +23,6 @@ public class ClottonballBlock extends UberVegetationBlock{
             double e = (double)blockPos.getY() + 0.6;
             double f = (double)blockPos.getZ() + randomSource.nextDouble();
             level.addParticle(UberParticleTypes.CLOTTON, d, e, f, 0, 0.05, 0);
-            //TODO custom particle
         }
     }
 

@@ -2,6 +2,7 @@ package com.ninni.uber.entity;
 
 import com.ninni.uber.registry.UberEntityTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -12,12 +13,20 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.AbstractIllager;
@@ -160,7 +169,6 @@ public class Hound extends Monster {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public void die(DamageSource damageSource) {
         if (!this.level.isClientSide() && !this.isSpawnedAtDeath()) {
             int i = UniformInt.of(2, 6).sample(this.random);
@@ -170,20 +178,13 @@ public class Hound extends Monster {
                 double x = this.getX() + Mth.randomBetween(hound.random, -3f, 3f);
                 double y = this.getY() + this.random.nextInt(-1, 1);
                 double z = this.getZ() + Mth.randomBetween(hound.random, -3f, 3f);
-
                 BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
-                BlockPos belowPos = new BlockPos((int) x, (int) y - 1, (int) z);
-                BlockState spawnState = this.level.getBlockState(pos);
-                BlockState belowSpawnState = this.level.getBlockState(belowPos);
-
-                boolean bl = !spawnState.getBlock().isCollisionShapeFullBlock(spawnState, this.level, pos);
-                boolean bl2 = belowSpawnState.getBlock().isCollisionShapeFullBlock(belowSpawnState, this.level, belowPos);
-
-
-                if (bl && bl2) hound.moveTo(x, y, z, this.getYRot(), this.getXRot());
-                hound.emergeTick = 60;
-                hound.setSpawnedAtDeath(true);
-                this.level.addFreshEntity(hound);
+                if (this.level.getBlockState(pos.below()).isFaceSturdy(this.level, pos.below(), Direction.UP) && this.level.isEmptyBlock(pos)) {
+                    hound.moveTo(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, this.getYRot(), this.getXRot());
+                    hound.emergeTick = 60;
+                    hound.setSpawnedAtDeath(true);
+                    this.level.addFreshEntity(hound);
+                }
             }
         }
         super.die(damageSource);
