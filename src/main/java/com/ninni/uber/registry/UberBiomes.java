@@ -33,8 +33,8 @@ public class UberBiomes {
                 .downfall(0.0F)
                 .specialEffects(
                         (new BiomeSpecialEffects.Builder())
-                                .waterColor(4159204)
-                                .waterFogColor(329011)
+                                .waterColor(2410180)
+                                .waterFogColor(745583)
                                 .fogColor(8025457)
                                 .skyColor(0)
                                 .ambientLoopSound(UberSoundEvents.AMBIENT_UBER_ECSTACE_LOOP)
@@ -60,8 +60,8 @@ public class UberBiomes {
                 .downfall(0.0F)
                 .specialEffects(
                         (new BiomeSpecialEffects.Builder())
-                                .waterColor(4159204)
-                                .waterFogColor(329011)
+                                .waterColor(2410180)
+                                .waterFogColor(745583)
                                 .fogColor(11766784)
                                 .skyColor(0)
                                 //.ambientParticle(new AmbientParticleSettings(ParticleTypes.CRIMSON_SPORE, 0.01428f))

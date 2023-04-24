@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public class ManaGelBlock extends Block {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
-    protected static final VoxelShape SHAPE = Block.box(1.0, 1.0, 1.0, 15.0, 15.0, 15.0);
+    protected static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 15, 15);
 
     public ManaGelBlock(Properties properties) {
         super(properties);
@@ -40,9 +40,7 @@ public class ManaGelBlock extends Block {
     protected Vec3 getJumpVelocity(Entity entity) {
         if (!entity.isSuppressingBounce()) {
             Vec3 vel = entity.getDeltaMovement();
-            double x = vel.x() * 1.3f;
-            double z = vel.z() * 1.3f;
-            return new Vec3(x, 1, z);
+            return new Vec3(vel.x(), 1.4 + vel.y() * 0.2, vel.z());
         }
         return  Vec3.ZERO;
     }
