@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "uber:crownstone"
+  },
+  "result": "uber:chiseled_polished_crownstone",
+  "count": 1
+}

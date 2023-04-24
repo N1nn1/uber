@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "uber:polished_crownstone_tiles"
+  },
+  "result": "uber:polished_crownstone_tile_stairs",
+  "count": 1
+}

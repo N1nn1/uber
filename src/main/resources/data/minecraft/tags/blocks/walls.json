@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "uber:dreadstone_wall",
-    "uber:dreadstone_tile_wall"
+    "uber:dreadstone_tile_wall",
+    "uber:crownstone_wall",
+    "uber:polished_crownstone_tile_wall"
   ]
 }

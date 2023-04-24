@@ -13,6 +13,20 @@
     "uber:dreadstone_tiles",
     "uber:dreadstone_tile_stairs",
     "uber:dreadstone_tile_slab",
-    "uber:dreadstone_tile_wall"
+    "uber:dreadstone_tile_wall",
+    "uber:crownstone",
+    "uber:crownstone_stairs",
+    "uber:crownstone_slab",
+    "uber:crownstone_wall",
+    "uber:crownstone_pillar",
+    "uber:polished_crownstone",
+    "uber:polished_crownstone_stairs",
+    "uber:polished_crownstone_slab",
+    "uber:chiseled_polished_crownstone",
+    "uber:polished_crownstone_tiles",
+    "uber:cracked_polished_crownstone_tiles",
+    "uber:polished_crownstone_tile_stairs",
+    "uber:polished_crownstone_tile_slab",
+    "uber:polished_crownstone_tile_wall"
   ]
 }

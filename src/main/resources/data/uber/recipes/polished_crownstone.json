@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "uber:crownstone"
+    }
+  },
+  "result": {
+    "item": "uber:polished_crownstone",
+    "count": 4
+  }
+}

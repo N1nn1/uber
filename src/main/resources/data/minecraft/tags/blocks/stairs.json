@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "uber:dreadstone_stairs",
-    "uber:dreadstone_tile_stairs"
+    "uber:dreadstone_tile_stairs",
+    "uber:crownstone_stairs",
+    "uber:polished_crownstone_stairs",
+    "uber:polished_crownstone_tile_stairs"
   ]
 }

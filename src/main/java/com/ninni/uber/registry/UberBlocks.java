@@ -27,9 +27,26 @@ public class UberBlocks {
     public static final Block SMOOTH_DREADSTONE_SLAB = register("smooth_dreadstone_slab", new SlabBlock(FabricBlockSettings.copyOf(SMOOTH_DREADSTONE)));
     public static final Block DREADSTONE_TILES = register("dreadstone_tiles", new Block(FabricBlockSettings.copyOf(DREADSTONE)));
     public static final Block CRACKED_DREADSTONE_TILES = register("cracked_dreadstone_tiles", new Block(FabricBlockSettings.copyOf(DREADSTONE_TILES)));
-    public static final Block DREADSTONE_TILE_STAIRS = register("dreadstone_tile_stairs", new StairBlock(CRACKED_DREADSTONE_TILES.defaultBlockState(), BlockBehaviour.Properties.copy(CRACKED_DREADSTONE_TILES)));
-    public static final Block DREADSTONE_TILE_SLAB = register("dreadstone_tile_slab", new SlabBlock(FabricBlockSettings.copyOf(CRACKED_DREADSTONE_TILES)));
-    public static final Block DREADSTONE_TILE_WALL = register("dreadstone_tile_wall", new WallBlock(FabricBlockSettings.copyOf(CRACKED_DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_STAIRS = register("dreadstone_tile_stairs", new StairBlock(DREADSTONE_TILES.defaultBlockState(), BlockBehaviour.Properties.copy(DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_SLAB = register("dreadstone_tile_slab", new SlabBlock(FabricBlockSettings.copyOf(DREADSTONE_TILES)));
+    public static final Block DREADSTONE_TILE_WALL = register("dreadstone_tile_wall", new WallBlock(FabricBlockSettings.copyOf(DREADSTONE_TILES)));
+
+    //ECSTACE
+        //crownstone
+    public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.CALCITE)));
+    public static final Block CROWNSTONE_STAIRS = register("crownstone_stairs", new StairBlock(CROWNSTONE.defaultBlockState(), BlockBehaviour.Properties.copy(CROWNSTONE)));
+    public static final Block CROWNSTONE_SLAB = register("crownstone_slab", new SlabBlock(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block CROWNSTONE_WALL = register("crownstone_wall", new WallBlock(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block CROWNSTONE_PILLAR = register("crownstone_pillar", new RotatedPillarBlock(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block POLISHED_CROWNSTONE = register("polished_crownstone", new Block(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block POLISHED_CROWNSTONE_STAIRS = register("polished_crownstone_stairs", new StairBlock(POLISHED_CROWNSTONE.defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CROWNSTONE)));
+    public static final Block POLISHED_CROWNSTONE_SLAB = register("polished_crownstone_slab", new SlabBlock(FabricBlockSettings.copyOf(POLISHED_CROWNSTONE)));
+    public static final Block CHISELED_POLISHED_CROWNSTONE = register("chiseled_polished_crownstone", new Block(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block POLISHED_CROWNSTONE_TILES = register("polished_crownstone_tiles", new Block(FabricBlockSettings.copyOf(CROWNSTONE)));
+    public static final Block CRACKED_POLISHED_CROWNSTONE_TILES = register("cracked_polished_crownstone_tiles", new Block(FabricBlockSettings.copyOf(POLISHED_CROWNSTONE_TILES)));
+    public static final Block POLISHED_CROWNSTONE_TILE_STAIRS = register("polished_crownstone_tile_stairs", new StairBlock(POLISHED_CROWNSTONE_TILES.defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CROWNSTONE_TILES)));
+    public static final Block POLISHED_CROWNSTONE_TILE_SLAB = register("polished_crownstone_tile_slab", new SlabBlock(FabricBlockSettings.copyOf(POLISHED_CROWNSTONE_TILES)));
+    public static final Block POLISHED_CROWNSTONE_TILE_WALL = register("polished_crownstone_tile_wall", new WallBlock(FabricBlockSettings.copyOf(POLISHED_CROWNSTONE_TILES)));
 
     public static final Block MEDULESOIL = register("medulesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
     public static final Block PHASMOFUZZ = register("phasmofuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.PHASMOFUZZ_BONEMEAL));
@@ -45,7 +62,6 @@ public class UberBlocks {
 
     //ECSTACE
     public static final Block MELLOROCK = register("mellorock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block CROWNSTONE = register("crownstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block ELYSIAFUZZ = register("elysiafuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.ELYSIAFUZZ_BONEMEAL));
     public static final Block MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new FuzzBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK), UberConfiguredFeatures.MELLOW_ELYSIAFUZZ_BONEMEAL));
     public static final Block ELYSIAVELD = register("elysiaveld", new UberVegetalDecoBlock(FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS), true));

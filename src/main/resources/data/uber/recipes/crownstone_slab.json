@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uber:crownstone"
+    }
+  },
+  "result": {
+    "item": "uber:crownstone_slab",
+    "count": 6
+  }
+}

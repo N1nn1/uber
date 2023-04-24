@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uber:polished_crownstone"
+    }
+  },
+  "result": {
+    "item": "uber:polished_crownstone_stairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "uber:block/polished_crownstone_tiles",
+    "top": "uber:block/polished_crownstone_tiles",
+    "side": "uber:block/polished_crownstone_tiles"
+  }
+}

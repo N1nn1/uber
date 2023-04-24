@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "uber:block/crownstone_pillar",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "uber:block/crownstone_pillar"
+    },
+    "axis=z": {
+      "model": "uber:block/crownstone_pillar",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uber:block/polished_crownstone_slab"
+    },
+    "type=double": {
+      "model": "uber:block/polished_crownstone"
+    },
+    "type=top": {
+      "model": "uber:block/polished_crownstone_slab_top"
+    }
+  }
+}

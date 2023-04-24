@@ -29,6 +29,23 @@ public class UberCreativeModeTab {
             output.accept(DREADSTONE_TILE_SLAB);
             output.accept(DREADSTONE_TILE_WALL);
 
+            //GRYMMOTH
+                //dreadstone
+            output.accept(CROWNSTONE);
+            output.accept(CROWNSTONE_STAIRS);
+            output.accept(CROWNSTONE_SLAB);
+            output.accept(CROWNSTONE_WALL);
+            output.accept(CROWNSTONE_PILLAR);
+            output.accept(POLISHED_CROWNSTONE);
+            output.accept(POLISHED_CROWNSTONE_STAIRS);
+            output.accept(POLISHED_CROWNSTONE_SLAB);
+            output.accept(CHISELED_POLISHED_CROWNSTONE);
+            output.accept(POLISHED_CROWNSTONE_TILES);
+            output.accept(CRACKED_POLISHED_CROWNSTONE_TILES);
+            output.accept(POLISHED_CROWNSTONE_TILE_STAIRS);
+            output.accept(POLISHED_CROWNSTONE_TILE_SLAB);
+            output.accept(POLISHED_CROWNSTONE_TILE_WALL);
+
             output.accept(MEDULESOIL);
             output.accept(PHASMOFUZZ);
             output.accept(PHASMOFOLLICLE);
@@ -41,7 +58,6 @@ public class UberCreativeModeTab {
             output.accept(HOUND_SPAWN_EGG);
 
             output.accept(MELLOROCK);
-            output.accept(CROWNSTONE);
             output.accept(ELYSIAFUZZ);
             output.accept(MELLOW_ELYSIAFUZZ);
             output.accept(ELYSIAVELD);
@@ -65,14 +81,29 @@ public class UberCreativeModeTab {
                     CRACKED_DREADSTONE_TILES,
                     DREADSTONE_TILE_STAIRS,
                     DREADSTONE_TILE_SLAB,
-                    DREADSTONE_TILE_WALL
+                    DREADSTONE_TILE_WALL,
+                    CROWNSTONE,
+                    CROWNSTONE_STAIRS,
+                    CROWNSTONE_SLAB,
+                    CROWNSTONE_WALL,
+                    CROWNSTONE_PILLAR,
+                    POLISHED_CROWNSTONE,
+                    POLISHED_CROWNSTONE_SLAB,
+                    POLISHED_CROWNSTONE_SLAB,
+                    CHISELED_POLISHED_CROWNSTONE,
+                    POLISHED_CROWNSTONE_TILES,
+                    CRACKED_POLISHED_CROWNSTONE_TILES,
+                    POLISHED_CROWNSTONE_TILE_STAIRS,
+                    POLISHED_CROWNSTONE_TILE_SLAB,
+                    POLISHED_CROWNSTONE_TILE_WALL
             );
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
 
             entries.addAfter(Items.END_STONE,
-                    DREADSTONE
+                    DREADSTONE,
+                    CROWNSTONE
             );
         });
     }

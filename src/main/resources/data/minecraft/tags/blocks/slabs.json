@@ -3,6 +3,9 @@
   "values": [
     "uber:dreadstone_slab",
     "uber:smooth_dreadstone_slab",
-    "uber:dreadstone_tile_slab"
+    "uber:dreadstone_tile_slab",
+    "uber:crownstone_slab",
+    "uber:polished_crownstone_slab",
+    "uber:polished_crownstone_tile_slab"
   ]
 }

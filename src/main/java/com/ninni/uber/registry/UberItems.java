@@ -29,6 +29,23 @@ public class UberItems {
     public static final Item DREADSTONE_TILE_SLAB = register("dreadstone_tile_slab", new BlockItem(UberBlocks.DREADSTONE_TILE_SLAB, new FabricItemSettings()));
     public static final Item DREADSTONE_TILE_WALL = register("dreadstone_tile_wall", new BlockItem(UberBlocks.DREADSTONE_TILE_WALL, new FabricItemSettings()));
 
+    //ECSTACE
+        //crownstone
+    public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
+    public static final Item CROWNSTONE_STAIRS = register("crownstone_stairs", new BlockItem(UberBlocks.CROWNSTONE_STAIRS, new FabricItemSettings()));
+    public static final Item CROWNSTONE_SLAB = register("crownstone_slab", new BlockItem(UberBlocks.CROWNSTONE_SLAB, new FabricItemSettings()));
+    public static final Item CROWNSTONE_WALL = register("crownstone_wall", new BlockItem(UberBlocks.CROWNSTONE_WALL, new FabricItemSettings()));
+    public static final Item CROWNSTONE_PILLAR = register("crownstone_pillar", new BlockItem(UberBlocks.CROWNSTONE_PILLAR, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE = register("polished_crownstone", new BlockItem(UberBlocks.POLISHED_CROWNSTONE, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_STAIRS = register("polished_crownstone_stairs", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_STAIRS, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_SLAB = register("polished_crownstone_slab", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_SLAB, new FabricItemSettings()));
+    public static final Item CHISELED_POLISHED_CROWNSTONE = register("chiseled_polished_crownstone", new BlockItem(UberBlocks.CHISELED_POLISHED_CROWNSTONE, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_TILES = register("polished_crownstone_tiles", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_TILES, new FabricItemSettings()));
+    public static final Item CRACKED_POLISHED_CROWNSTONE_TILES = register("cracked_polished_crownstone_tiles", new BlockItem(UberBlocks.CRACKED_POLISHED_CROWNSTONE_TILES, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_TILE_STAIRS = register("polished_crownstone_tile_stairs", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_TILE_STAIRS, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_TILE_SLAB = register("polished_crownstone_tile_slab", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_TILE_SLAB, new FabricItemSettings()));
+    public static final Item POLISHED_CROWNSTONE_TILE_WALL = register("polished_crownstone_tile_wall", new BlockItem(UberBlocks.POLISHED_CROWNSTONE_TILE_WALL, new FabricItemSettings()));
+
     public static final Item MEDULESOIL = register("medulesoil", new BlockItem(UberBlocks.MEDULESOIL, new FabricItemSettings()));
     public static final Item PHASMOFUZZ = register("phasmofuzz", new BlockItem(UberBlocks.PHASMOFUZZ, new FabricItemSettings()));
     public static final Item PHASMOFOLLICLE = register("phasmofollicle", new BlockItem(UberBlocks.PHASMOFOLLICLE, new FabricItemSettings()));
@@ -42,7 +59,6 @@ public class UberItems {
 
     //ECSTACE
     public static final Item MELLOROCK = register("mellorock", new BlockItem(UberBlocks.MELLOROCK, new FabricItemSettings()));
-    public static final Item CROWNSTONE = register("crownstone", new BlockItem(UberBlocks.CROWNSTONE, new FabricItemSettings()));
     public static final Item ELYSIAFUZZ = register("elysiafuzz", new BlockItem(UberBlocks.ELYSIAFUZZ, new FabricItemSettings()));
     public static final Item MELLOW_ELYSIAFUZZ = register("mellow_elysiafuzz", new BlockItem(UberBlocks.MELLOW_ELYSIAFUZZ, new FabricItemSettings()));
     public static final Item ELYSIAVELD = register("elysiaveld", new BlockItem(UberBlocks.ELYSIAVELD, new FabricItemSettings()));

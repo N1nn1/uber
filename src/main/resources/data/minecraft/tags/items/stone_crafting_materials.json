@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "uber:dreadstone"
+    "uber:dreadstone",
+    "uber:crownstone"
   ]
 }

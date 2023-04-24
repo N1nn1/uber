@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "uber:block/polished_crownstone",
+    "top": "uber:block/polished_crownstone",
+    "side": "uber:block/polished_crownstone"
+  }
+}

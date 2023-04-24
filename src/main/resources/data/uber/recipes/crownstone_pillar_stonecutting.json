@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "uber:crownstone"
+  },
+  "result": "uber:crownstone_pillar",
+  "count": 1
+}
