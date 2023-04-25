@@ -6,11 +6,14 @@
   "name": "Uber",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "Ninni",
+    "Noon",
+    "Afk",
+    "Orcinus"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://discord.gg/gt74VjsggK",
+    "sources": "https://github.com/N1nn1/uber"
   },
 
   "license": "CC0-1.0",
