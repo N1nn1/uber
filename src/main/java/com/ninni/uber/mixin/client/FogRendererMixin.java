@@ -9,6 +9,7 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
@@ -49,6 +50,8 @@ public class FogRendererMixin {
             biomeChangedTime = -1L;
         }
 
+
+
         float u = ((float)camera.getPosition().y - (float)clientLevel.getMinBuildHeight()) * clientLevel.getLevelData().getClearColorScale();
         FogRenderer.MobEffectFogFunction mobEffectFogFunction = getPriorityFogFunction(entity, f);
         if (mobEffectFogFunction != null) {
@@ -58,6 +61,15 @@ public class FogRendererMixin {
         if (u < 1.0f && fogType != UberFogTypes.MANA.get()) {
             if (u < 0.0f) u = 0.0f;
             u *= u;
+            fogRed *= u;
+            fogGreen *= u;
+            fogBlue *= u;
+        }
+
+        if (entity.getLevel().dimension() == Uber.UBER) {
+            float y = ((float)entity.getY()* 0.015f);
+            u *= y;
+
             fogRed *= u;
             fogGreen *= u;
             fogBlue *= u;
@@ -103,7 +115,8 @@ public class FogRendererMixin {
             fogData.start = f * 0.05f;
             fogData.end = f * ((float)entity.getY()* 0.01f);
             fogData.shape = FogShape.CYLINDER;
-        } else if (mobEffectFogFunction != null) {
+        }
+        else if (mobEffectFogFunction != null) {
             LivingEntity livingEntity = (LivingEntity)entity;
             MobEffectInstance mobEffectInstance = livingEntity.getEffect(mobEffectFogFunction.getMobEffect());
             if (mobEffectInstance != null) {

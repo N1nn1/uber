@@ -1,5 +1,6 @@
 package com.ninni.uber.mixin.client;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Axis;
@@ -35,22 +36,22 @@ public abstract class LevelRendererMixin {
         ClientLevel level = this.minecraft.level;
         BufferBuilder bufferBuilder = Tesselator.getInstance().getBuilder();
         if (level != null && level.effects().skyType() == UberSkyTypes.UBER.get()) {
-            this.renderUberSky(poseStack);
-            this.renderMindsEye(poseStack, bufferBuilder);
-            this.renderShootingStars(poseStack, bufferBuilder, 69, 1f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, 60, -0.7f, 4);
-            this.renderShootingStars(poseStack, bufferBuilder, 55, 1.2f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, 47, -0.35f, 6);
-            this.renderShootingStars(poseStack, bufferBuilder, 31, 0.5f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, 23, -0.5f, 5);
-            this.renderShootingStars(poseStack, bufferBuilder, 7, 0.7f, 4);
-            this.renderShootingStars(poseStack, bufferBuilder, -10, -1f, 4);
-            this.renderShootingStars(poseStack, bufferBuilder, -20, 1.2f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, -31, -0.4f, 3);
-            this.renderShootingStars(poseStack, bufferBuilder, -43, 0.6f, 4);
-            this.renderShootingStars(poseStack, bufferBuilder, -50, -0.4f, 4);
-            this.renderShootingStars(poseStack, bufferBuilder, -69, 0.4f, 5);
-            this.renderShootingStars(poseStack, bufferBuilder, -75, -0.3f, 5);
+            this.renderUberSky(poseStack, camera);
+            //this.renderMindsEye(poseStack, bufferBuilder);
+            //this.renderShootingStars(poseStack, bufferBuilder, 69, 1f, 3);
+            //this.renderShootingStars(poseStack, bufferBuilder, 60, -0.7f, 4);
+            //this.renderShootingStars(poseStack, bufferBuilder, 55, 1.2f, 3);
+            //this.renderShootingStars(poseStack, bufferBuilder, 47, -0.35f, 6);
+            //this.renderShootingStars(poseStack, bufferBuilder, 31, 0.5f, 3);
+            //this.renderShootingStars(poseStack, bufferBuilder, 23, -0.5f, 5);
+            //this.renderShootingStars(poseStack, bufferBuilder, 7, 0.7f, 4);
+            //this.renderShootingStars(poseStack, bufferBuilder, -10, -1f, 4);
+            //this.renderShootingStars(poseStack, bufferBuilder, -20, 1.2f, 3);
+            //this.renderShootingStars(poseStack, bufferBuilder, -31, -0.4f, 3);
+            //this.renderShootingStars(poseStack, bufferBuilder, -43, 0.6f, 4);
+            //this.renderShootingStars(poseStack, bufferBuilder, -50, -0.4f, 4);
+            //this.renderShootingStars(poseStack, bufferBuilder, -69, 0.4f, 5);
+            //this.renderShootingStars(poseStack, bufferBuilder, -75, -0.3f, 5);
         }
     }
 
@@ -75,33 +76,34 @@ public abstract class LevelRendererMixin {
     }
 
     private void renderMindsEye(PoseStack poseStack, BufferBuilder bufferBuilder) {
-        float l = 25.0f;
+        float size = 30.0f;
         poseStack.pushPose();
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0F);
-        poseStack.mulPose(Axis.XP.rotationDegrees(-60.0F));
         assert this.level != null;
         poseStack.mulPose(Axis.YP.rotationDegrees((float)this.level.getGameTime()/8));
         Matrix4f matrix4f3 = poseStack.last().pose();
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderTexture(0, MINDS_EYE_LOCATION);
         bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-        bufferBuilder.vertex(matrix4f3, -l, 100.0f, -l).uv(0.0f, 0.0f).endVertex();
-        bufferBuilder.vertex(matrix4f3, l, 100.0f, -l).uv(1.0f, 0.0f).endVertex();
-        bufferBuilder.vertex(matrix4f3, l, 100.0f, l).uv(1.0f, 1.0f).endVertex();
-        bufferBuilder.vertex(matrix4f3, -l, 100.0f, l).uv(0.0f, 1.0f).endVertex();
+        bufferBuilder.vertex(matrix4f3, -size, 100.0f, -size).uv(0.0f, 0.0f).endVertex();
+        bufferBuilder.vertex(matrix4f3, size, 100.0f, -size).uv(1.0f, 0.0f).endVertex();
+        bufferBuilder.vertex(matrix4f3, size, 100.0f, size).uv(1.0f, 1.0f).endVertex();
+        bufferBuilder.vertex(matrix4f3, -size, 100.0f, size).uv(0.0f, 1.0f).endVertex();
         BufferUploader.drawWithShader(bufferBuilder.end());
         RenderSystem.disableBlend();
         RenderSystem.defaultBlendFunc();
         poseStack.popPose();
     }
 
-    private void renderUberSky(PoseStack poseStack) {
+    private void renderUberSky(PoseStack poseStack, Camera camera) {
         RenderSystem.enableBlend();
         RenderSystem.depthMask(false);
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         RenderSystem.setShaderTexture(0, UBER_SKY_LOCATION);
         Tesselator tesselator = Tesselator.getInstance();
         BufferBuilder bufferBuilder = tesselator.getBuilder();
+
+
         for (int i = 0; i < 6; ++i) {
             poseStack.pushPose();
 
@@ -112,7 +114,10 @@ public abstract class LevelRendererMixin {
             if (i == 5) poseStack.mulPose(Axis.ZP.rotationDegrees(-90.0f));
 
             Matrix4f matrix4f = poseStack.last().pose();
-            int d = 40;
+            int y = (int)camera.getEntity().getY();
+            if (y >= 146) y = 146;
+            if (y <= 52) y = 52;
+            int d = (int) (-140 + y * 2.7);
             bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
             bufferBuilder.vertex(matrix4f, -100.0f, -100.0f, -100.0f).uv(0.0f, 0.0f).color(d, d, d, 255).endVertex();
             bufferBuilder.vertex(matrix4f, -100.0f, -100.0f, 100.0f).uv(0.0f, 16.0f).color(d, d, d, 255).endVertex();
